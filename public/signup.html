@@ -2,17 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Flexible FoodMenu</title>
+<title>Flexible FoodMenu| Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" -->
+<meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
+<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -21,22 +20,30 @@
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
- <!-- The core Firebase JS SDK is always required and must be listed first -->
- <script src="/__/firebase/8.4.3/firebase-app.js"></script>
+<!-- bootstrap -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- //bootstrap -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.4.3/firebase-app.js"></script>
 
- <script defer src="/__/firebase/8.4.3/firebase-auth.js"></script>
- <script defer src="/__/firebase/8.4.3/firebase-database.js"></script>
- <script defer src="/__/firebase/8.4.3/firebase-firestore.js"></script>
- <script defer src="/__/firebase/8.4.3/firebase-functions.js"></script>
- <!--<script defer src="/__/firebase/8.4.3/firebase-messaging.js"></script>-->
- <script defer src="/__/firebase/8.4.3/firebase-storage.js"></script>
+<script defer src="/__/firebase/8.4.3/firebase-auth.js"></script>
+<script defer src="/__/firebase/8.4.3/firebase-database.js"></script>
+<script defer src="/__/firebase/8.4.3/firebase-firestore.js"></script>
+<script defer src="/__/firebase/8.4.3/firebase-functions.js"></script>
+<!--<script defer src="/__/firebase/8.4.3/firebase-messaging.js"></script>-->
+<script defer src="/__/firebase/8.4.3/firebase-storage.js"></script>
 
- <!-- Initialize Firebase -->
- <script src="/__/firebase/init.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
 </head>
 <body> 
+	
 	<!-- banner -->
-	<div class="banner">
+	<div class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
@@ -127,167 +134,44 @@
 			<!-- //navigation --> 
 		</div>
 		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
-				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="text" placeholder="Enter Your Area Name" required="">
-						<select id="agileinfo_search" name="agileinfo_search" required="">
-							<option value="">Popular Cities</option>
-							<option value="navs">New York</option>
-							<option value="quotes">Los Angeles</option>
-							<option value="videos">Chicago</option>
-							<option value="news">Phoenix</option>
-							<option value="notices">Fort Worth</option>
-							<option value="all">Other</option>
-						</select>
-						<input type="submit" value="Search">
-					</form>
-				</div> 
-			</div>
-		</div>
 	</div>
-	<!-- //banner -->   
-	<!-- add-products -->
-	<div class="add-products">  
-		<div class="container">
-			<div class="add-products-row">
-				<div class="w3ls-add-grids">
-					<a href="menu.html"> 
-						<h4>Get <span>20%<br>Cashback</span></h4>
-						<h5>Ordered in mobile app only </h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div>
-				<div class="w3ls-add-grids w3ls-add-grids-right">
-					<a href="menu.html"> 
-						<h4>GET Upto<span><br>40% Offer</span></h4>
-						<h5>Sunday special discount</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div> 
-				<div class="clearfix"> </div> 
-			</div>  	 
-		</div>
+	<!-- //banner -->    
+	<!-- breadcrumb -->  
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Sign Up</li>
+		</ol>
 	</div>
-	<!-- //add-products --> 
-	<!-- order -->   	
-	<div class="wthree-order">  
-		<img src="images/i2.jpg" class="w3order-img" alt=""/>
-		<div class="container">
-			<h3 class="w3ls-title">How To Order Online Food</h3>
-			<p class="w3lsorder-text">Get your favourite food in 4 simple steps.</p>
-			<div class="order-agileinfo">  
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-map" aria-hidden="true"></i> 
-						<h5>Search Area</h5>
-						<span>1</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-cutlery" aria-hidden="true"></i> 
-						<h5>Choose Food</h5>
-						<span>2</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-credit-card" aria-hidden="true"></i>
-						<h5>Pay Money</h5>
-						<span>3</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-truck" aria-hidden="true"></i>
-						<h5>Enjoy Food</h5>
-						<span>4</span>
-					</div>
-				</div>
-				<div class="clearfix"> </div> 
-			</div>
-		</div>
-	</div>
-	<!-- //order -->     
-	<!-- dishes -->
-	<div class="w3agile-spldishes">
-		<div class="container">
-			<h3 class="w3ls-title">Special Foods</h3>
-			<div class="spldishes-agileinfo">
-				<div class="col-md-3 spldishes-w3left">
-					<h5 class="w3ltitle">Staple Specials</h5>
-					<p>Vero vulputate enim non justo posuere placerat Phasellus mauris vulputate enim non justo enim .</p>
-				</div> 
-				<div class="col-md-9 spldishes-grids">
-					<!-- Owl-Carousel -->
-					<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a> 
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.html" class="item g1">
-							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
+	<!-- //breadcrumb -->
+	<!-- sign up-page -->
+	<div class="login-page about">
+		<img class="login-w3img" src="images/img3.jpg" alt="">
+		<div class="container"> 
+			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
+			<div class="login-agileinfo"> 
+				<form class="register" method="post"> 
+					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
+					<input class="agile-ltext" type="email" name="email" placeholder="Your Email" required="">
+					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
+					<input class="agile-ltext" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
+					<div class="wthreelogin-text"> 
+						<ul> 
+							<li>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
+									<span>Business account</span> 
+								</label> 
+							</li>
+						</ul>
+						<div class="clearfix"> </div>
 					</div> 
-				</div>  
-				<div class="clearfix"> </div>
-			</div>
+					<input type="submit" value="Sign Up">
+				</form>
+				<p>Already have an account?  <a href="login.html"> Login Now!</a></p> 
+			</div>	 
 		</div>
 	</div>
-	<!-- //dishes --> 
+	<!-- //sign up-page -->   
 	<!-- footer -->
 	<div class="footer agileits-w3layouts">
 		<div class="container">
@@ -331,7 +215,7 @@
 			</div>
 		</div> 
 	</div>
-	<!-- //footer --> 
+	<!-- //footer -->
 	<!-- cart-js -->
 	<script src="js/minicart.js"></script>
 	<script>
@@ -349,19 +233,6 @@
         });
     </script>  
 	<!-- //cart-js -->	
-	<!-- Owl-Carousel-JavaScript -->
-	<script src="js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#owl-demo").owlCarousel ({
-				items : 3,
-				lazyLoad : true,
-				autoPlay : true,
-				pagination : true,
-			});
-		});
-	</script>
-	<!-- //Owl-Carousel-JavaScript -->  
 	<!-- start-smooth-scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>  
 	<script type="text/javascript" src="js/move-top.js"></script>
@@ -396,8 +267,8 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
-	<script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
 	<script src="js/auth.js"></script>
+	<script src="js/register.js"></script>
 </body>
 </html>

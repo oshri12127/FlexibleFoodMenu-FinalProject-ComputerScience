@@ -1,9 +1,4 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
 body{
 	margin:0; 
 	font-family: 'Yantramanav', sans-serif;
@@ -1344,13 +1339,13 @@ input#amount {
     width: 100%;
     display: inline;
     position: relative;
-    color: #fff;
-    font-size: 1em;
+    color: #000;
+    font-size: 2em;
     font-weight: 400;
     text-decoration: none;
 }
 .faq > li > a:hover,.faq > li >a.active{
-	color: #000;
+	color: rgb(219, 14, 14);
 }
 .faq li a.active span {
 	-webkit-transform: rotatex(180deg);

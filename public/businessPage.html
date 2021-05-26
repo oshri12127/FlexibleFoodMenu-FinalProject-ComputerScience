@@ -10,7 +10,8 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" type="text/css" href="css/googleMapsStyle.css" />
 <link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
@@ -20,6 +21,7 @@
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
  <!-- The core Firebase JS SDK is always required and must be listed first -->
  <script src="/__/firebase/8.4.3/firebase-app.js"></script>
 
@@ -138,7 +140,172 @@
 	</div>
 	<!-- //breadcrumb -->
 	<!-- business-page -->
+	<div class="login-page about">
+		<img class="login-w3img" src="images/img3.jpg" alt="">
+		<div class="container">
+			<h3 class="w3ls-title w3ls-title1">Business Page</h3>
+			<div class="grid_3 grid_5" style="width: 80%;">
+				<div class="bs-example bs-example-tabs w3" role="tabpanel" data-example-id="togglable-tabs">
+					<ul id="myTab" class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#Edit" id="Edit-tab" role="tab" data-toggle="tab"
+								aria-controls="Edit" aria-expanded="true">Add/Edit</a></li>
+						<li role="presentation" class=""><a href="#Preview" role="tab" id="Preview-tab" data-toggle="tab"
+								aria-controls="Preview" aria-expanded="false">Preview</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade active in" id="Edit" aria-labelledby="Edit-tab">
+							<div class="panel-group" id="accordion">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Name &
+												Description</a>
+										</h4>
+									</div>
+									<div id="collapse1" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="form-group">
+												<label for="name" style="font-size: large;">Name:</label>
+												<input class="form-control input-lg" id="name" type="text"
+													style="width: 50%;">
+											</div>
+											<div class="form-group">
+												<label for="description" style="font-size: large;">Description:</label>
+												<textarea class="form-control" rows="5" id="description"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Picture</a>
+										</h4>
+									</div>
+									<div id="collapse2" class="panel-collapse collapse">
+										<div class="panel-body">
 	
+											<div class="form-group">
+												<label for="LogoRestPic" style="font-size: large;">Logo image:</label>
+												<br />
+												<br />
+												<input type="file" accept="image/*" capture="camera" id="LogoRestPic">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapse3">Location</a>
+										</h4>
+									</div>
+									<div id="collapse3" class="panel-collapse collapse">
+										<div class="panel-body" style="height: 5cm;">
+											<input id="pac-input" class="controls" type="text" placeholder="Search Box" />
+											<div id="map"></div>
+											<!--GoogleMaps-->
+											<script async
+												src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7CjUg_Xg6om7TecpweGDZQ4oIEq2LmMg&callback=initAutocomplete&libraries=places&v=weekly">
+												</script>
+											<!--/GoogleMaps-->
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Details</a>
+										</h4>
+									</div>
+									<div id="collapse4" class="panel-collapse collapse">
+										<div class="panel-body">
+	
+											<div class="form-group">
+	
+												<label for="restaurantType:" style="font-size: large;">Restaurant
+													type:</label>
+												<select class="form-control" id="restaurantType" style="width: 20%;">
+													<option selected="selected">Meat</option>
+													<!--value="1"-->
+													<option>Dairy</option>
+													<option>Parveh</option>
+													<option>Vegan</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label class="checkbox">
+													<input type="checkbox" name="kosher">
+													<i></i>
+													<span style="font-size: large;">Kosher</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Dishes</a>
+										</h4>
+									</div>
+									<div id="collapse5" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="form-group">
+												<label for="dishPic" style="font-size: large;">Dish image:</label>
+												<input type="file" accept="image/*" capture="camera" id="dishPic">
+											</div>
+											<div class="form-group">
+												<label for="dishType:" style="font-size: large;">Type:</label>
+												<select class="form-control" id="dishType" style="width: 20%;">
+													<option selected="selected">Fast Food</option>
+													<option>Cafe </option>
+													<option>Salad</option>
+													<option>Sushi</option>
+													<option>Vegan</option>
+													<option>Ethnic</option>
+													<option>Healthy</option>
+													<option>Sandwich</option>
+													<option>Pasta</option>
+													<option>Soup</option>
+													<option>Breakfast</option>
+													<option>Chef</option>
+													<option>Homemade</option>
+													<option>Dessert</option>
+													<option>Drinks</option>
+												</select>
+											</div>
+											<form class="form-inline">
+												<div class="form-group">
+													<label for="dishPrice" style="font-size: large;">Price:</label>
+													<input class="form-control input" id="dishPrice" type="number">
+												</div>
+												<div class="form-group">
+													<i class="fa fa-shekel"></i>
+												</div>
+											</form>
+											<br>
+											<div class="form-group">
+												<label for="dishDescription" style="font-size: large;">Description:</label>
+												<textarea class="form-control" rows="5" id="dishDescription"></textarea>
+											</div>
+											<div class="col-md-12 text-center">
+											<button type="button" class="btn btn-default btn-lg btn-block">Uplode</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade w3" id="Preview" aria-labelledby="Preview-tab">
+							<p>Food truck fixie locavore, accusamus mcsweene</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- //business-page -->  
 	<!-- footer -->
 	<div class="footer agileits-w3layouts">
@@ -225,8 +392,9 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
     <script src="js/bootstrap.js"></script>
 	<script src="js/auth.js"></script>
-	
+	<script src="js/business.js"></script>
 </body>
 </html>

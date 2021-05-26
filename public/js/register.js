@@ -49,14 +49,5 @@ function sleep(ms) {
 async function demo()//(business) 
 {
   await sleep(3000);
-  registerForm.reset();
-  /*if(business==1)
-    {
-      location.href = 'businessPage.html';
-    }
-  else
-  {
-    registerForm.reset();
-  }*/
-  
+  registerForm.reset(); 
 }

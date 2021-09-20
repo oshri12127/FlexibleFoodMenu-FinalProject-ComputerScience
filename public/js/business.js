@@ -66,3 +66,76 @@ function initAutocomplete() {
       map.fitBounds(bounds);
     });
   }
+
+  /////////////////////////////////////////////////
+
+  const restaurantsArr = [];
+  const DishesArr = [];
+  
+  function AddDish(e){
+    //const dishImage = editFrom.dishPic.value;
+    const type = document.getElementById('dishType').value;
+    const dishPrice = document.getElementById('dishPrice').value;
+    const dishDescription = document.getElementById('dishDescription').value;
+    if((type!="")&&(dishPrice!="")&&(dishDescription!=""))
+    {
+      let dish = 
+      {
+        //"image": dishImage,
+        "dishType": type,
+        "dishPrice": dishPrice,
+        "dishDescription": dishDescription
+      }
+      DishesArr.push(dish);
+      alert('Dish Saved!');
+      document.getElementById('dishPic').value=null;
+      document.getElementById('dishType').value=null;
+      document.getElementById('dishPrice').value=null;
+      document.getElementById('dishDescription').value=null;
+    }
+    else
+    {
+      if(type=="")
+        alert('Please choose type');
+      if(dishPrice=="")
+        alert('Please enter price');
+      if(dishDescription=="")
+        alert('Please enter description');
+    }
+  }
+  
+
+//var userNow2;
+function UpdateAll(e){
+  const name = document.getElementById('name').value;
+  const description = document.getElementById('description').value;
+  //const LogoRestPic = document.getElementById('LogoRestPic').value;
+  //const loc = document.getElementById('pac-input').value;
+  const restaurantType = document.getElementById('restaurantType').value;
+  kosher=0;//0=False
+  if(document.getElementById('kosher').checked)
+    {kosher = 1;}//1=True
+firebase.auth().onAuthStateChanged(function (user){
+userNow2 = user.uid;
+var datesRef = firebase.database().ref();
+datesRef.child('Restaurant').child(userNow2).child('RestInfo').set({
+  Name: name,
+  //picUrl: LogoRestPic,
+  Description: description,
+  //Location: loc,
+  Type: restaurantType,
+  Kosher: kosher,
+  Dishes: DishesArr
+});
+demo();
+});
+}
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function demo()
+{
+  await sleep(3000);
+  window.location.reload(); 
+}

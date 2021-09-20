@@ -236,7 +236,7 @@
 											</div>
 											<div class="form-group">
 												<label class="checkbox">
-													<input type="checkbox" name="kosher">
+													<input type="checkbox" name="kosher" id="kosher">
 													<i></i>
 													<span style="font-size: large;">Kosher</span>
 												</label>
@@ -291,9 +291,16 @@
 												<textarea class="form-control" rows="5" id="dishDescription"></textarea>
 											</div>
 											<div class="col-md-12 text-center">
-											<button type="button" class="btn btn-default btn-lg btn-block">Uplode</button>
+											<button type="button" id="UplodeDish" class="btn btn-default btn-lg btn-block" onclick="AddDish()">Uplode</button>
 											</div>
 										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										
+											<button type="button" id="UpdateAll" class="btn btn-default btn-lg btn-block" onclick="UpdateAll()"><h4>Update</h4></button>
+											
 									</div>
 								</div>
 							</div>

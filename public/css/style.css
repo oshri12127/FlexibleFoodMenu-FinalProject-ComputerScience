@@ -941,8 +941,19 @@ h3.w3ls-title.w3ls-title1 {
     padding: 0 8px;
 }
 .product-top {
-    background: #08cae2;
+    background-image: url(../images/1.jpg);
     padding: 1em 2em;
+    background-size:cover;
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-color: #08cae2; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */ 
 }
 .product-top li.dropdown{
     display: inline-block;

@@ -112,7 +112,7 @@ async function AddDish(e) {
     document.getElementById('dishType').value = null;
     document.getElementById('dishPrice').value = null;
     document.getElementById('dishDescription').value = null;
-    console.log(DishesArr);
+    //console.log(DishesArr);
   }
   else {
     if (name == "")
@@ -159,4 +159,24 @@ function sleep(ms) {
 async function demo() {
   await sleep(3000);
   window.location.reload();
+}
+
+
+function Preview()
+{
+  firebase.auth().onAuthStateChanged(function (user) {
+    userNow2 = user.uid;
+    var datesRef = firebase.database().ref();
+    datesRef.child('Restaurants').child(userNow2).once('value',function (snap) { //once - only for one time connected
+      snap.forEach(function (item) {
+        var itemVal = item.val();
+        restaurantsArr.push(itemVal);
+
+        document.getElementById('PicRestPreview').style.backgroundImage='url(' + restaurantsArr[0].picUrl + ')';
+        document.getElementById('NameRestPreview').innerHTML=restaurantsArr[0].Name;
+        
+      });
+    });
+  });
+  //restaurantsArr=[];//clean the arr
 }

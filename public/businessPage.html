@@ -192,7 +192,13 @@
 									</div>
 									<div id="collapse2" class="panel-collapse collapse">
 										<div class="panel-body">
-
+											<div class="form-group" id="pic-form-edit" style="display: none;">
+												<div class="ml-2 col-sm-6" style="float: right;">
+													<img  id="divImageMedia" class="img-thumbnail">
+													<br />
+													<label for="divImageMedia" style="font-size: medium;">To change the logo image will choose another image.</label>
+												</div>
+											</div>
 											<div class="form-group">
 												<label for="LogoRestPic" style="font-size: large;">Logo image:</label>
 												<br />
@@ -264,16 +270,32 @@
 									<div id="collapse5" class="panel-collapse collapse">
 										<div class="panel-body">
 											<div class="form-group">
-												<label for="dishName" style="font-size: large;">Dish Name:</label>
-												<input class="form-control input" id="dishName" style="width: 50%;">
+												<label for="DishOption" style="font-size: large;">Choose Dish:</label>
+												<select style="width: 25%;" class="form-control" id="DishOption">
+													<option selected="selected">Add new dish</option>
+												</select>
 											</div>
+											<div class="form-group" id="dishPic-form-edit" style="display: none;">
+												<div class="ml-2 col-sm-5" style="float: right;">
+													<label for="divDishImageMedia" style="font-size: large;">Dish image:</label>
+													<img  id="divDishImageMedia" class="img-thumbnail">
+													<br />
+													<label for="divDishImageMedia" style="font-size: medium;">To change the dish image will choose another image.</label>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="dishName" style="font-size: large;">Dish Name:</label>
+												<input class="form-control input" id="dishName" style="width: 25%;">
+											</div>
+											
 											<div class="form-group">
 												<label for="dishPic" style="font-size: large;">Dish image:</label>
 												<input type="file" accept="image/*" capture="camera" id="dishPic">
 											</div>
+											
 											<div class="form-group">
 												<label for="dishType:" style="font-size: large;">Type:</label>
-												<select class="form-control" id="dishType" style="width: 20%;">
+												<select class="form-control" id="dishType" style="width: 25%;">
 													<option selected="selected">Fast Food</option>
 													<option>Cafe </option>
 													<option>Salad</option>
@@ -309,7 +331,7 @@
 											<div class="col-md-12 text-center">
 												<button type="button" id="UplodeDish"
 													class="btn btn-default btn-lg btn-block"
-													onclick="AddDish()">Uplode</button>
+													onclick="AddDish()">Save</button>
 											</div>
 										</div>
 									</div>
@@ -330,90 +352,14 @@
 							<!-- products -->
 							<div class="product-top" id="PicRestPreview">
 								<h4 style="font-size: 60px;color: whitesmoke;" id="NameRestPreview">NULL </h4>
-								<ul>
-									<li class="dropdown head-dpdn">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown"
-											aria-expanded="false">Filter By<span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="#">Low price</a></li>
-											<li><a href="#">High price</a></li>
-											<li><a href="#">Latest</a></li>
-										</ul>
-									</li>
-									<li class="dropdown head-dpdn">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown"
-											aria-expanded="false">Food Type<span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="#">Breakfast</a></li>
-											<li><a href="#">Lunch</a></li>
-											<li><a href="#">Dinner</a></li>
-										</ul>
-									</li>
-								</ul>
+								
 								<div class="clearfix"> </div>
 							</div>
-							<div class="products-row">
-								<div class="col-xs-6 col-sm-4 product-grids">
-									<div class="flip-container">
-										<div class="flipper agile-products">
-											<div class="front">
-												<img src="images/g6.jpg" class="img-responsive" alt="img">
-												<div class="agile-product-text">
-													<h5>Fish salad</h5>
-												</div>
-											</div>
-											<div class="back">
-												<h4>Fish salad</h4>
-												<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-												<h6>3<sup>$</sup></h6>
-												<form action="#" method="post">
-													<input type="hidden" name="cmd" value="_cart">
-													<input type="hidden" name="add" value="1">
-													<input type="hidden" name="w3ls_item" value="Fish salad">
-													<input type="hidden" name="amount" value="3.00">
-													<button type="submit" class="w3ls-cart pw3ls-cart"><i
-															class="fa fa-cart-plus" aria-hidden="true"></i> Add to
-														cart</button>
-													<span class="w3-agile-line"> </span>
-													<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-xs-6 col-sm-4 product-grids">
-									<div class="flip-container">
-										<div class="flipper agile-products">
-											<div class="front">
-												<div class="agile-product-text agile-product-text2">
-													<h5>Sandwich</h5>
-												</div>
-												<img src="images/g1.jpg" class="img-responsive" alt="img">
-											</div>
-											<div class="back">
-												<h4>Sandwich</h4>
-												<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-												<h6>2<sup>$</sup></h6>
-												<form action="#" method="post">
-													<input type="hidden" name="cmd" value="_cart">
-													<input type="hidden" name="add" value="1">
-													<input type="hidden" name="w3ls_item" value="Sandwich">
-													<input type="hidden" name="amount" value="2.00">
-													<button type="submit" class="w3ls-cart pw3ls-cart"><i
-															class="fa fa-cart-plus" aria-hidden="true"></i> Add to
-														cart</button>
-													<span class="w3-agile-line"> </span>
-													<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
+							<div class="products-row" id="products-row">
 							</div>
 							<!-- //products -->
 							<!-- modal -->
-							<div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog"
+							<!--<div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog"
 								aria-labelledby="myModal1">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
@@ -424,32 +370,13 @@
 										<section>
 											<div class="modal-body">
 												<div class="col-md-5 modal_body_left">
-													<img src="images/s1.jpg" alt=" " class="img-responsive">
+													<img src="images/s1.jpg" alt=" " class="img-responsive" id="model_img-responsive">
 												</div>
 												<div class="col-md-7 modal_body_right single-top-right">
 													<h3 class="item_name">France Special Dish</h3>
-													<p>Proin placerat urna et consequat efficitur, sem odio blandit enim
-													</p>
-													<div class="single-rating">
-														<ul>
-															<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-															<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-															<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-															<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-															<li class="w3act"><i class="fa fa-star-o"
-																	aria-hidden="true"></i></li>
-															<li class="rating">20 reviews</li>
-															<li><a href="#">Add your review</a></li>
-														</ul>
-													</div>
 													<div class="single-price">
 														<ul>
 															<li>$18</li>
-															<li><del>$20</del></li>
-															<li><span class="w3off">10% OFF</span></li>
-															<li>Ends on : Dec,5th</li>
-															<li><a href="#"><i class="fa fa-gift"
-																		aria-hidden="true"></i> Coupon</a></li>
 														</ul>
 													</div>
 													<p class="single-price-text">Fusce a egestas nibh, eget ornare erat.
@@ -466,32 +393,13 @@
 																class="fa fa-cart-plus" aria-hidden="true"></i> Add to
 															cart</button>
 													</form>
-													<a href="#" class="w3ls-cart w3ls-cart-like"><i
-															class="fa fa-heart-o" aria-hidden="true"></i> Add to
-														Wishlist</a>
-													<div class="single-page-icons social-icons">
-														<ul>
-															<li>
-																<h4>Share on</h4>
-															</li>
-															<li><a href="#" class="fa fa-facebook icon facebook"> </a>
-															</li>
-															<li><a href="#" class="fa fa-twitter icon twitter"> </a>
-															</li>
-															<li><a href="#" class="fa fa-google-plus icon googleplus">
-																</a></li>
-															<li><a href="#" class="fa fa-dribbble icon dribbble"> </a>
-															</li>
-															<li><a href="#" class="fa fa-rss icon rss"> </a></li>
-														</ul>
-													</div>
 												</div>
 												<div class="clearfix"> </div>
 											</div>
 										</section>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- //modal -->
 
 						</div>
@@ -556,7 +464,10 @@
 			if (this.subtotal() > 0) {
 				items = this.items();
 
-				for (i = 0, len = items.length; i < len; i++) {
+				for (i = 0, len = items.length; i < len; i++) 
+				{
+					items[i].set('shipping', 0);
+                    items[i].set('shipping2', 0);
 				}
 			}
 		});

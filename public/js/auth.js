@@ -1,6 +1,4 @@
 
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyB7CjUg_Xg6om7TecpweGDZQ4oIEq2LmMg",
   authDomain: "flexiblefoodmenu-finalproject.firebaseapp.com",
@@ -13,14 +11,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
-
-
-
-
-
-
-
 
 const signOut = document.querySelector('.sign-out');
 

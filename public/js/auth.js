@@ -1,4 +1,26 @@
 
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB7CjUg_Xg6om7TecpweGDZQ4oIEq2LmMg",
+  authDomain: "flexiblefoodmenu-finalproject.firebaseapp.com",
+  databaseURL: "https://flexiblefoodmenu-finalproject-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "flexiblefoodmenu-finalproject",
+  storageBucket: "flexiblefoodmenu-finalproject.appspot.com",
+  messagingSenderId: "437058897811",
+  appId: "1:437058897811:web:9f4890f75fae7c3f658a66"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
+
+
+
+
+
+
 const signOut = document.querySelector('.sign-out');
 
 // sign out

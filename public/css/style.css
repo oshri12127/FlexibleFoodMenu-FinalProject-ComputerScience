@@ -46,6 +46,22 @@ body a:focus {
 .w3ls-header-left {
     float: left;
 }
+.w3ls-header-left ul li {
+    display: inline-block;
+    padding: 0 1em;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+.w3ls-header-left ul li a{ 
+	color: #fff;
+	outline:none;
+	-webkit-transition:.5s all;
+	-moz-transition:.5s all;
+	-o-transition:.5s all;
+	-ms-transition:.5s all;
+	transition:.5s all;
+} 
 .w3ls-header-right {
     float: right;
 }
@@ -367,8 +383,8 @@ option {
     text-align: center;
     border: 5px dotted #08cae2;
     padding: 2.5em 0; 
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
     position: relative;
 	-webkit-border-radius: 50%;
@@ -443,6 +459,13 @@ p.w3lsorder-text {
 }
 .wthree-order {
     position: relative;
+    /*background:#FFFFFF;*/
+    background: -webkit-linear-gradient(to bottom, #f1efef 0%,#FFFFFF);
+	background: -moz-linear-gradient(to bottom, #f1efef 0%,#FFFFFF);
+	background: -o-linear-gradient(to bottom, #f1efef 0%,#FFFFFF);
+	background: -ms-linear-gradient(to bottom, #f1efef 0%,#FFFFFF);
+	background: -ms-gradient(to bottom, #f1efef 0%,#FFFFFF);
+	background: linear-gradient(to bottom, #f1efef 0%,#FFFFFF);
 }
 img.w3order-img {
     position: absolute;

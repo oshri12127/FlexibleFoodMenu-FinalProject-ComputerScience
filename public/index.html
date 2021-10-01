@@ -22,7 +22,11 @@
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
 
-<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
  <!-- The core Firebase JS SDK is always required and must be listed first -->
  <!--<script src="/__/firebase/8.4.3/firebase-app.js"></script>
 
@@ -43,7 +47,13 @@
 		<div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-					
+					<div class="w3ls-header-left">
+						<ul> 
+							<li class="head-dpdn">
+								<a id="emailUserHello"><i aria-hidden="true"></i> Hello</a>
+							</li> 
+						</ul>
+					</div>
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
@@ -76,43 +86,8 @@
 							<h1><a href="index.html">Flexible FoodMenu<span>The Freedom to Choose</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html" class="active">Home</a></li>	
-								<!-- Mega Menu -->
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Food type</h6>  
-													<li><a href="menu.html">Breakfast</a></li> 
-													<li><a href="menu.html">Lunch</a></li> 
-													<li><a href="menu.html">Dinner</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
-												</ul>
-											</div> 
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
+							<ul class="nav navbar-nav navbar-right">	
+								<!-- Menu -->
 								<li id="business"><a href="businessPage.html">Business Page</a></li> 
 							</ul>
 						</div>
@@ -152,29 +127,6 @@
 		</div>
 	</div>
 	<!-- //banner -->   
-	<!-- add-products -->
-	<div class="add-products">  
-		<div class="container">
-			<div class="add-products-row">
-				<div class="w3ls-add-grids">
-					<a href="menu.html"> 
-						<h4>Get <span>20%<br>Cashback</span></h4>
-						<h5>Ordered in mobile app only </h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div>
-				<div class="w3ls-add-grids w3ls-add-grids-right">
-					<a href="menu.html"> 
-						<h4>GET Upto<span><br>40% Offer</span></h4>
-						<h5>Sunday special discount</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div> 
-				<div class="clearfix"> </div> 
-			</div>  	 
-		</div>
-	</div>
-	<!-- //add-products --> 
 	<!-- order -->   	
 	<div class="wthree-order">  
 		<img src="images/i2.jpg" class="w3order-img" alt=""/>
@@ -192,14 +144,14 @@
 				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-cutlery" aria-hidden="true"></i> 
-						<h5>Choose Food</h5>
+						<h5>Choose Food From Any Restaurant In Area</h5>
 						<span>2</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
-						<i class="fa fa-credit-card" aria-hidden="true"></i>
-						<h5>Pay Money</h5>
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						<h5>Create Flexible Food Menu</h5>
 						<span>3</span>
 					</div>
 				</div>

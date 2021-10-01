@@ -28,6 +28,7 @@ $(document).ready(function() {
       $('#login').hide();
       $('#signup').hide();
       $('#signout').show();
+      $('#emailUserHello').show();
       isBusinessAccount(user); 
     } 
     else
@@ -35,6 +36,7 @@ $(document).ready(function() {
       $('#login').show();
       $('#signup').show();
       $('#signout').hide();
+      $('#emailUserHello').hide();
       document.getElementById('business').style.visibility = 'hidden';
       firebase.auth().signOut();
       if (!(document.URL.includes("login.html")||document.URL.includes("signup.html")||document.URL.includes("index.html"))) {
@@ -45,12 +47,14 @@ $(document).ready(function() {
 });
 
 function isBusinessAccount(user) {
+  const emailUserHello = document.getElementById('emailUserHello');
   const ref = firebase.database().ref();
         const userM=user.uid;
         ref.child('Users').child(userM).once('value', function(snap) { // once - only for one time connected
           snap.forEach(function(item) 
           {
             const itemVal = item.val();
+            emailUserHello.innerHTML = 'Hello ' + itemVal.Name;
             if (itemVal.Account==1) {//  business=1
               if(document.URL.includes("index.html"))
               {

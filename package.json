@@ -16,6 +16,9 @@
 		"jest": "^26.4.2",
 		"nodemon": "^2.0.4"
 	},
+	 "engines": {
+    "node": "12"
+  },
 	"husky": {
 		"hooks": {
 			"pre-commit": "npm test",

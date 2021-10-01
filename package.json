@@ -2,9 +2,10 @@
 	"name": "project",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "server.js",
 	"scripts": {
-		"dev": "nodemon index.js"
+		"dev": "nodemon server.js",
+		
 	},
 	"keywords": [],
 	"author": "",
@@ -16,7 +17,12 @@
 		"jest": "^26.4.2",
 		"nodemon": "^2.0.4"
 	},
-	
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm test",
+			"pre-push": "npm test"
+		}
+	},
 	"dependencies": {
 		"express": "^4.17.1"
 	}

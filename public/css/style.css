@@ -385,7 +385,7 @@ option {
     padding: 2.5em 0; 
     width: 200px;
     height: 200px;
-    margin: 0 auto;
+    margin:auto;
     position: relative;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -2718,7 +2718,7 @@ img.w3order-img {
 }
 @media(max-width:1366px){
 .order-w3text { 
-    margin: 0 7em; 
+    margin: auto; 
 }
 .deals-grids { 
     padding: 0 5em;
@@ -2761,7 +2761,7 @@ ul.nav.navbar-nav.navbar-right {
     font-size: 3.3em; 
 }
 .order-w3text {
-    margin: 0 auto;
+    margin: auto;
 }
 .deals-grids {
     padding: 0 1em;

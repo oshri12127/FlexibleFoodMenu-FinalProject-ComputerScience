@@ -270,7 +270,7 @@ ul.multi-column-dropdown h6 {
 }
 /*-- search --*/
 .agileits_search {
-    width: 70%;
+    width: 55%;
     margin: 3em 0 0;
 }
 .agileits_search form {
@@ -286,7 +286,7 @@ ul.multi-column-dropdown h6 {
     float: left;
 }
 .agileits_search input[type="text"]{
-	width: 57%; 
+	width: 80%; 
 }
 #agileinfo_search {
     width: 23%;

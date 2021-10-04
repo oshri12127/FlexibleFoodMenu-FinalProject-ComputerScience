@@ -297,16 +297,27 @@ function Preview()
              "<div class=\"agile-product-text agile-product-text2\"><h5>"+dish.name+"</h5>"+
              "</div><img src=\""+imagedish+"\" class=\"img-responsive\" alt=\"img\"></div>";
           }
-          i++;
+          i++;  
           target.insertAdjacentHTML("beforeend","<div class=\"col-xs-6 col-sm-4 product-grids\">"+
                                                 "<div class=\"flip-container\">"+
                                                 "<div class=\"flipper agile-products\">"+
                                                 front+
                                                 "<div class=\"back\"><h4>"+dish.name+"</h4><p>"+dish.dishDescription+"</p><h6>"+dish.dishPrice+"<sup><i class=\"fa fa-shekel\"></i></sup></h6>"+
                                                 "</div></div></div></div>");
-                                    
+                                                                          
         });
       });
     });
   });
 }
+
+
+
+/*"<form action=\"#\" method=\"post\">"+
+"<a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal1\" onclick=\"AddModelDdta("+i+")\">More</a></form>"+
+
+function AddModelDdta(i)
+{
+  document.getElementById('ModelNameDish').innerHTML = DishesArr[i].name;
+  
+}*/

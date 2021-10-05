@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Flexible FoodMenu| Login</title>
+<title>Flexible FoodMenu| Restaurants</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -110,27 +110,110 @@
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+			<li class="active">Restaurants</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- login-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
-			<div class="login-agileinfo"> 
-				<form class="login" method="post"> 
-					<input class="agile-ltext" type="email" name="email" placeholder="Your Email" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">  
-					<input type="submit" value="LOGIN">
-				</form>
-				<p>Don't have an Account? <a href="signup.html"> Sign Up Now!</a></p> 
-			</div>	 
+	<!-- options-page -->
+    <div class="products">	 
+		<div class="container">
+			<div class="col-md-9 product-w3ls-right"> 
+				<div class="product-top" style="height: 100px;background-color: #f1efef; box-shadow: 0 0 14px 7px rgb(224 224 224 / 35%);">
+					<h4 style="font-size: 60px;color: black;">Restaurants</h4>
+					
+					<div class="clearfix"> </div>
+				</div>
+				<div class="products-row" id="products-row">
+                </div>
+			</div>
+			<div class="col-md-3 rsidebar">
+				<div class="rsidebar-top">
+					<div class="slider-left">
+						<h4>CHOOSE BY AGE</h4>            
+						<div class="row row1 scroll-pane">
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Youngers</label>  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Adults</label> 
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Senior Citizen</label>  
+						</div> 
+					</div>
+					<div class="sidebar-row">
+						<h4>By Cuisine</h4>
+						<ul class="faq">
+							<li class="item1"><a href="#">Indian Food<span class="glyphicon glyphicon-menu-down"></span></a>
+								<ul>
+									<li class="subitem1"><a href="#">Breakfast</a></li>										
+									<li class="subitem1"><a href="#">Lunch</a></li>										
+									<li class="subitem1"><a href="#">Dinner</a></li>										
+									<li class="subitem1"><a href="#">Trending Food</a></li>										
+								</ul>
+							</li>
+							<li class="item2"><a href="#">Italian Food<span class="glyphicon glyphicon-menu-down"></span></a>
+								<ul>
+									<li class="subitem1"><a href="#">Panzanella</a></li>										
+									<li class="subitem1"><a href="#">Margherita Pizza </a></li>										
+									<li class="subitem1"><a href="#">Panna Cotta</a></li>										
+									<li class="subitem1"><a href="#">Corn Cannelloni</a></li>										
+								</ul>
+							</li>
+							<li class="item3"><a href="#">American Food<span class="glyphicon glyphicon-menu-down"></span></a>
+								<ul>
+									<li class="subitem1"><a href="#">Sandwiches</a></li>										
+									<li class="subitem1"><a href="#">Hot dog</a></li>										
+									<li class="subitem1"><a href="#">Chicken bog</a></li>										
+								</ul>
+							</li>
+						</ul>
+						<div class="clearfix"> </div> 
+						<!-- script for tabs -->
+						<script type="text/javascript">
+							$(function() {
+							
+								var menu_ul = $('.faq > li > ul'),
+									   menu_a  = $('.faq > li > a');
+								
+								menu_ul.hide();
+							
+								menu_a.click(function(e) {
+									e.preventDefault();
+									if(!$(this).hasClass('active')) {
+										menu_a.removeClass('active');
+										menu_ul.filter(':visible').slideUp('normal');
+										$(this).addClass('active').next().stop(true,true).slideDown('normal');
+									} else {
+										$(this).removeClass('active');
+										$(this).next().stop(true,true).slideUp('normal');
+									}
+								});
+							
+							});
+						</script>
+						<!-- script for tabs -->
+					</div>
+					<div class="sidebar-row">
+						<h4>DISCOUNTS</h4>
+						<div class="row row1 scroll-pane">  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (2)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (5)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
+						</div>
+					</div>
+					<div class="sidebar-row">
+						<h4>DELIVERY TIME</h4>
+						<div class="row row1 scroll-pane">
+							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>6.30 am to 8.30 am</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>11.30 am to 1.30 pm</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>7.30 pm to 10.00 pm</label> 
+						</div>
+					</div>			 
+				</div>
+			</div>
+			<div class="clearfix"> </div> 
 		</div>
 	</div>
-	<br/><br/><br/><br/><br/><br/>
-	<!-- //login-page -->  
+	<!-- //options-page -->  
 	<!-- footer -->
 	<div class="footer agileits-w3layouts">
 		<div class="container">
@@ -191,13 +274,23 @@
         	}
         });
     </script>  
-	<!-- //cart-js -->	
+	<!-- //cart-js -->
+    <!-- the jScrollPane script -->
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" id="sourcecode">
+		$(function()
+		{
+			$('.scroll-pane').jScrollPane();
+		});
+	</script>
+	<!-- //the jScrollPane script -->
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script> <!-- the mouse wheel plugin --> 	
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
-	<!--<script src="js/auth.js"></script>
-	<script src="js/login.js"></script>-->
+	<script src="js/auth.js"></script>
+	<script src="js/options.js"></script>
 </body>
 </html>

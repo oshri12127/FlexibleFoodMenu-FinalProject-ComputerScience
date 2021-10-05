@@ -70,7 +70,7 @@ function initAutocomplete() {
 /////////////////////////////////////////////////
 //const EditArr = [];
 //const restaurantsArr = [];
-const DishesArr = [];
+var DishesArr = [];
 var imageURL;
 $(document).ready(function () //edit the data that user added/
 {
@@ -85,17 +85,19 @@ $(document).ready(function () //edit the data that user added/
         if (itemVal != null) {
           document.getElementById('divImageMedia').src = itemVal.picUrl;
           document.getElementById('divImageMedia').value = itemVal.picUrl;
-          if(document.getElementById('divImageMedia').value!="")
+          if (document.getElementById('divImageMedia').value != "")
             document.getElementById('pic-form-edit').style.display = 'block';
           document.getElementById('name').value = itemVal.Name;
           document.getElementById('description').innerHTML = itemVal.Description;
           document.getElementById('restaurantType').value = itemVal.Type;
           if (itemVal.Kosher == 1)
             document.getElementById('kosher').checked = true;
-          itemVal.Dishes.forEach(function (dish) {
-            DishesArr.push(dish);
-          });
-          DishOptionRefresh();
+          if (itemVal.Dishes != "") {
+            itemVal.Dishes.forEach(function (dish) {
+              DishesArr.push(dish);
+            });
+            DishOptionRefresh();
+          }
         }
       });
     });
@@ -232,8 +234,10 @@ async function UpdateAll(e) {
       if (document.getElementById('divImageMedia').value != "")
         imageURL = document.getElementById('divImageMedia').src;
     }
-
-
+    if(DishesArr.length==0)
+      DishesArr="";
+    console.log(DishesArr);
+    await sleep(3000);  
     firebase.auth().onAuthStateChanged(function (user) {
       userNow2 = user.uid;
       var datesRef = firebase.database().ref();

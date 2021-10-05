@@ -1374,7 +1374,7 @@ input#amount {
     display: inline;
     position: relative;
     color: #000;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 400;
     text-decoration: none;
 }

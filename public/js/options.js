@@ -29,7 +29,7 @@ function SearchRestResult(loctionSearch) {
                         "</div><img src=\"" + imageRest + "\" class=\"img-responsive\" alt=\"img\"></div>";
                 }
                 i++;
-                target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-4 product-grids\">" +
+                target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-3 col-md-3 col-lg-3 product-grids\">" +
                 
                     "<div id="+item.key+" class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"EnterRest(this.id)\">" +
                     "<div class=\"flipper agile-products\">" +

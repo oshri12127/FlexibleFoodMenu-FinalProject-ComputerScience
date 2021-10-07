@@ -170,7 +170,7 @@ async function AddDish(e) {
   const type = document.getElementById('dishType').value;
   const dishPrice = document.getElementById('dishPrice').value;
   const dishDescription = document.getElementById('dishDescription').value;
-  if ((name.trim() != "") && (type != "") && (dishPrice != "") && (dishDescription.trim() != "")) {
+  if ((name.trim() != "") && (type != "") && (dishPrice != ""||dishPrice>=0) && (dishDescription.trim() != "")) {
     if (dishImageFile != null) {
       UplodeImage(dishImageFile);
       await sleep(3000);
@@ -208,7 +208,7 @@ async function AddDish(e) {
       alert('Please enter name');
     if (type == "")
       alert('Please choose type');
-    if (dishPrice == "")
+    if (dishPrice == ""||dishPrice <= 0)
       alert('Please enter price');
     if (dishDescription.trim() == "")
       alert('Please enter description');
@@ -307,6 +307,7 @@ function Preview()
                                                 "<div class=\"flipper agile-products\">"+
                                                 front+
                                                 "<div class=\"back\"><h4>"+dish.name+"</h4><p>"+dish.dishDescription+"</p><h6>"+dish.dishPrice+"<sup><i class=\"fa fa-shekel\"></i></sup></h6>"+
+                                                "<div class=\"clearfix\"> </div>"+
                                                 "</div></div></div></div>");
                                                                           
         });

@@ -1716,6 +1716,16 @@ p.single-price-text {
     display: inline-block;
     background: #08cae2;
 }
+#inputSpinnerAmountCart {
+    width: 15%;
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+    padding: 0.6em 0;
+    border: 1px solid #08cae2;
+    display: inline-block;
+    background: #08cae2;
+}
 .single-top-right .w3ls-cart:hover {
     background: #fd463e;
     border-color: #fd463e;

@@ -1903,7 +1903,7 @@ var defaults = module.exports = {
 
     parent: (typeof document !== 'undefined') ? document.body : null,
 
-    action: 'products.html',
+    action: 'index.html',
 
     target: '',
 
@@ -1914,7 +1914,7 @@ var defaults = module.exports = {
     styles: '',
 
     strings: {
-        button: 'Shop More',
+        button: 'Checkout',
         subtotal: 'Subtotal:',
         discount: 'Discount:',
         empty: 'Your shopping cart is empty'

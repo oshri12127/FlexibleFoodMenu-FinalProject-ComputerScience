@@ -30,11 +30,6 @@ $(document).ready(function () {
                     "<div class=\"flipper agile-products\">" +
                     front +
                     "<div class=\"back\"><h4>" + dish.name + "</h4><p>" + dish.dishDescription + "</p><h6>" + dish.dishPrice + "<sup><i class=\"fa fa-shekel\"></i></sup></h6>" +
-                    //"<form id="+item.key+" action=\"/restaurantPage.html\" method=\"GET\">"+
-                    //"<input type=\"hidden\" id=\"Restaurant_Name\" name=\"Restaurant_Name\" value="+ itemVal.RestInfo.Name +">"+
-                    //"<button id="+item.key+" name="+itemVal.RestInfo.Name+" class=\"w3ls-cart pw3ls-cart\" onclick=\"EnterRest(this.id,this.name)\">Enter</button>"+
-                   // "</form>"+
-                   //"<a href=\"#\" id=\""+dish.name+"\" data-toggle=\"modal\" onclick=\"AddModelDish(this.id)\" data-target=\"#myModal1\">More</a>"+
                     "<div class=\"clearfix\"> </div>" +
                     "</div></div></div></div>");
 
@@ -54,7 +49,10 @@ function AddModelDish(NameDish) {
                     document.getElementById('ModelPrice').innerHTML = dish.dishPrice;
                     document.getElementById('modelDescription').innerHTML = dish.dishDescription;
                     document.getElementById('nameToCart').value = NameDish;
-                    document.getElementById('priceToCart').value = dish.dishPrice;                }
+                    document.getElementById('priceToCart').value = dish.dishPrice;
+                    document.getElementById('name+location').value = itemVal.Name+"-";//+itemVal.Location;
+                    document.getElementById('inputSpinnerAmountCart').value = 1;               
+                }
             });
         });
     });

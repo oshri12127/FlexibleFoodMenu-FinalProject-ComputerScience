@@ -16,8 +16,10 @@ const signOut = document.querySelector('.sign-out');
 
 // sign out
 signOut.addEventListener('click', () => {
+    w3ls.reset();
     firebase.auth().signOut()
       .then(() => console.log('signed out'));
+        
   });
 // auth listener
 $(document).ready(function() {
@@ -38,6 +40,7 @@ $(document).ready(function() {
       $('#signout').hide();
       $('#emailUserHello').hide();
       document.getElementById('business').style.visibility = 'hidden';
+      w3ls.reset();
       firebase.auth().signOut();
       if (!(document.URL.includes("login.html")||document.URL.includes("signup.html")||document.URL.includes("index.html"))) {
         location.href = 'index.html';

@@ -156,11 +156,13 @@
                                 <!--<input id="numOfAddToCart" type="hidden" name="add" value="2" /><!-->
                                 <input id="nameToCart" type="hidden" name="w3ls_item" />
                                 <input id="priceToCart" type="hidden" name="amount" />
+                                <input id="name+location" type="hidden" name="item_number" />
+                                <input type="hidden" name="currency_code" value='ILS' />
                                 <button type="submit" class="w3ls-cart"><i
                                         class="fa fa-cart-plus" aria-hidden="true"></i> Add to
                                     cart</button>
-                                    <input name="add" class="w3lscartspinner" id="inputSpinnerAmountCart" type="number" value="1" min="1"  step="1"/>
-                            </form>
+                                    <input name="quantity" class="w3lscartspinner" id="inputSpinnerAmountCart" type="number"  min="1"  step="1"/>
+                                </form>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -216,18 +218,12 @@
 	<!-- cart-js -->
 	<script src="js/minicart.js"></script>
 	<script>
+        
         w3ls.render();
-
-        w3ls.cart.on('w3sb_checkout', function (evt) {
-        	var items, len, i;
-
-        	if (this.subtotal() > 0) {
-        		items = this.items();
-
-        		for (i = 0, len = items.length; i < len; i++) { 
-        		}
-        	}
-        });
+        //console.log(w3ls.cart.items(0));
+        //console.log(w3ls.cart.discount());
+        //console.log(w3ls.cart.total());
+        //<input id="discount_rate_cart" type="hidden" name="discount_amount_cart" value="50" />
     </script>  
 	<!-- //cart-js -->	
 	

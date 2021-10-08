@@ -315,14 +315,3 @@ function Preview()
     });
   });
 }
-
-
-
-/*"<form action=\"#\" method=\"post\">"+
-"<a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal1\" onclick=\"AddModelDdta("+i+")\">More</a></form>"+
-
-function AddModelDdta(i)
-{
-  document.getElementById('ModelNameDish').innerHTML = DishesArr[i].name;
-  
-}*/

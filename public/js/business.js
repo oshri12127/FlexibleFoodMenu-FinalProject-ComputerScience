@@ -68,7 +68,8 @@ function initAutocomplete() {
 }
 /////////////////////////////////////////////////
 function SearchAddress(){
-  var Address=document.getElementById('pac-input');
+  var Address=document.getElementById('pac-input').value;
+  console.log(Address);
   govmap.geocode({keyword: Address, type: govmap.geocodeType.AccuracyOnly}
   ).then(function(response){
       console.log(response.data[0]);
@@ -76,7 +77,7 @@ function SearchAddress(){
      var Y=response.data[0].Y;
      govmap.zoomToXY({ x: X, y: Y, level: 8, marker: true });
 
-  });  
+  });
 }
 
 /////////////////////////////////////////////////

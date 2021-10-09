@@ -3,21 +3,22 @@
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
     <script type="text/javascript">
-        $(document).ready(function ()
-        {
-            govmap.createMap('map', 
-                {
-                    token: '952ce76e-3d1b-4226-adea-b8c3f0a186df',
-                    layers: ["GASSTATIONS","PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
-                    showXY: true,
-                    identifyOnClick: true,
-                    isEmbeddedToggle: false,
-                    background: "1",
-                    layersMode: 1,
-                    zoomButtons:false
-                });
+        $(document).ready(function () {
+                govmap.createMap('map',
+                    {
+                        center: { x: 178813, y: 664081 },
+                        token: '952ce76e-3d1b-4226-adea-b8c3f0a186df',
+                        layers: ["GASSTATIONS", "PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+                        showXY: true,
+                        level: 3,
+                        identifyOnClick: false,
+                        isEmbeddedToggle: false,
+                        background: "0",
+                        layersMode: 4,
+                        zoomButtons: true
+                    });
 
-        });
+            });
 
         function showExample(){
             govmap.geocode({keyword: 'מגדל העמק הדפנה 15', type: govmap.geocodeType.AccuracyOnly}
@@ -25,7 +26,7 @@
                 console.log(response.data[0]);
                var X= response.data[0].X;
                var Y=response.data[0].Y;
-               govmap.zoomToXY({ x: X, y: Y, level: 10, marker: true });
+               govmap.zoomToXY({ x: X, y: Y, level: 8, marker: true });
 
             });  
         }

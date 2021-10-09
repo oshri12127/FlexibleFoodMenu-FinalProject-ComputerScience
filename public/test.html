@@ -22,7 +22,7 @@
         function showExample(){
             govmap.geocode({keyword: 'מגדל העמק הדפנה 15', type: govmap.geocodeType.AccuracyOnly}
             ).then(function(response){
-                console.log(response.Data[0]);
+                console.log(response.Data);
                var X= response.Data[0].X;
                var Y=response.Data[0].Y;
                govmap.zoomToXY({ x: X, y: Y, level: 10, marker: true });

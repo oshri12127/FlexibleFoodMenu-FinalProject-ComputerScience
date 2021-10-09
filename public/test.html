@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
-    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
     <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
     <script type="text/javascript">
         $(document).ready(function ()
@@ -20,15 +20,14 @@
         });
 
         function showExample(){
-        var params ={  
-                     address: "הרוקמים 26 חולון",  
-                     layerName: "SUB_GUSH_ALL",  
-                     fields: ['GUSH_NUM']  
-                    }
-        govmap.intersectFeatures(params).then(function (response)  
-            {  
-              console.log(response);
-            });     
+            govmap.geocode({keyword: 'מגדל העמק הדפנה 15', type: govmap.geocodeType.AccuracyOnly}
+            ).then(function(response){
+                console.log(response);
+               var X= response.Data.X;
+               var Y=response.Data.Y;
+               govmap.zoomToXY({ x: X, y: Y, level: 10, marker: true });
+
+            });  
         }
    </script>
  </head>

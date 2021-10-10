@@ -1,8 +1,8 @@
 $(document).ready(function () //edit the data that user added/
 {
     const urlParams = new URLSearchParams(window.location.search);
-    const apples = urlParams.get('Search');
-    SearchRestResult(apples);
+    const result = urlParams.get('Search');
+    SearchRestResult(result);
 });
 
 function SearchRestResult(loctionSearch) {
@@ -13,7 +13,8 @@ function SearchRestResult(loctionSearch) {
     datesRef.child('Restaurants').once('value', function (snap) { //once - only for one time connected
         snap.forEach(function (item) {
             var itemVal = item.val();
-            if (true)//itemVal.RestInfo.Name == loctionSearch)//change to itemVal.Loction
+            console.log(itemVal.RestInfo.Location.address);
+            if (itemVal.RestInfo.Location.address.includes(loctionSearch))//change to itemVal.Loction
             {
                 var imageRest = "/images/default_dish.jpg";
                 if (itemVal.RestInfo.picUrl != "")

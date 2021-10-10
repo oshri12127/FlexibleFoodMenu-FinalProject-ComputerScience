@@ -5,13 +5,13 @@ function SearchAddress() {
   var Address = document.getElementById('pac-input').value;
   govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
   ).then(function (response) {
-
+    var addressResponse=response.data[0].ResultLable;
     var X = response.data[0].X;
     var Y = response.data[0].Y;
     zoomToXY(X,Y);
     let location =
     {
-      "address": Address,
+      "address": addressResponse,
       "X": X,
       "Y": Y
     }

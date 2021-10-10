@@ -5,7 +5,7 @@ function SearchAddress(){
     var Address = document.getElementById('pac-input').value;
     govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
     ).then(function (response) {
-      if(response!=null){
+      if(response.data[0]!=null){
       var X = response.data[0].X;
       var Y = response.data[0].Y;
       govmap.zoomToXY({ x: X, y: Y, level: 6, marker: true });

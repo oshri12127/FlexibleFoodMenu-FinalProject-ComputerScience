@@ -1,19 +1,26 @@
 
 /////////////////////////////////////////////////
 function SearchAddress(){
-  var Address=document.getElementById('pac-input').value;
-  console.log(Address);
-  govmap.geocode({keyword: Address, type: govmap.geocodeType.AccuracyOnly}
-  ).then(function(response){
+  try {
+    var Address = document.getElementById('pac-input').value;
+    console.log(Address);
+    govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
+    ).then(function (response) {
       console.log(response.data[0]);
-     var X= response.data[0].X;
-     var Y=response.data[0].Y;
-     govmap.zoomToXY({ x: X, y: Y, level: 6, marker: true });
-  })
-  .catch(error => {
+      var X = response.data[0].X;
+      var Y = response.data[0].Y;
+      govmap.zoomToXY({ x: X, y: Y, level: 6, marker: true });
+    })
+  }
+  catch (error) {
+    console.log(error);
     const errorMessage = error.message;
-        window.alert('Error : ' + errorMessage);
-  });
+    window.alert('Error : ' + errorMessage);
+  }
+  window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+    alert("Error occured: " + errorMsg);//or any message
+    return false;
+}
 }
 /////////////////////////////////////////////////
 //const EditArr = [];

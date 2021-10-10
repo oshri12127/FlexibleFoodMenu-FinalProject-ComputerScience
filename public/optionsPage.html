@@ -20,7 +20,7 @@
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-
+<script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
@@ -123,8 +123,13 @@
 					<h4 style="font-size: 60px;color: black;">Restaurants</h4>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="container">
+				<div class="col-md-12">
 					<div class="products-row" id="products-row">
+					</div>
+					<div id="SearchResultDiv" style="display: none;">
+						<br/>
+						<br/>
+						<h2 id="SearchResult"></h2>
 					</div>
 				</div>
 				<div class="clearfix"> </div>

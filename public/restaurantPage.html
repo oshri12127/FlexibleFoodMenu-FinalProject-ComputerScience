@@ -158,6 +158,7 @@
                                 <input id="priceToCart" type="hidden" name="amount" />
                                 <input id="name+location" type="hidden" name="item_number" />
                                 <input type="hidden" name="currency_code" value='ILS' />
+								<input id="FullLocation" type="hidden" name="location" />
                                 <button type="submit" class="w3ls-cart"><i
                                         class="fa fa-cart-plus" aria-hidden="true"></i> Add to
                                     cart</button>
@@ -220,7 +221,7 @@
 	<script>
         
         w3ls.render();
-        //console.log(w3ls.cart.items(0));
+        //console.log(w3ls.cart.items(0)._data.location);
         //console.log(w3ls.cart.discount());
         //console.log(w3ls.cart.total());
         //<input id="discount_rate_cart" type="hidden" name="discount_amount_cart" value="50" />

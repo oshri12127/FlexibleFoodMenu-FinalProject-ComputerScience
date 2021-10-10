@@ -50,7 +50,9 @@ function AddModelDish(NameDish) {
                     document.getElementById('modelDescription').innerHTML = dish.dishDescription;
                     document.getElementById('nameToCart').value = NameDish;
                     document.getElementById('priceToCart').value = dish.dishPrice;
-                    document.getElementById('name+location').value = itemVal.Name+"-";//+itemVal.Location;
+                    document.getElementById('FullLocation').value = itemVal.Location.address;
+                    const city = itemVal.Location.address.split(",");
+                    document.getElementById('name+location').value = itemVal.Name+" - "+city[1];
                     document.getElementById('inputSpinnerAmountCart').value = 1;               
                 }
             });

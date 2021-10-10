@@ -3,10 +3,8 @@
 function SearchAddress(){
   try {
     var Address = document.getElementById('pac-input').value;
-    console.log(Address);
     govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
     ).then(function (response) {
-      console.log(response.data[0]);
       if(response!=null){
       var X = response.data[0].X;
       var Y = response.data[0].Y;

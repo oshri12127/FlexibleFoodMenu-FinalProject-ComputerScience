@@ -7,24 +7,35 @@ function SearchAddress(){
     govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
     ).then(function (response) {
       console.log(response.data[0]);
+      if(response!=null){
       var X = response.data[0].X;
       var Y = response.data[0].Y;
       govmap.zoomToXY({ x: X, y: Y, level: 6, marker: true });
+      let location =
+    {
+      "address": Address,
+      "X": X,
+      "Y": Y
+    }
+    LOCATION=location;}
+    else
+    {throw "address not find, try again"; }
     })
   }
   catch (error) {
     console.log(error);
-    const errorMessage = error.message;
+    const errorMessage = error;
     window.alert('Error : ' + errorMessage);
   }
-  window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+ /* window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     alert("Error occured: " + errorMsg);//or any message
     return false;
-}
+}*/
 }
 /////////////////////////////////////////////////
 //const EditArr = [];
 //const restaurantsArr = [];
+var LOCATION;
 var DishesArr = [];
 var imageURL;
 $(document).ready(function () //edit the data that user added/
@@ -200,7 +211,7 @@ async function UpdateAll(e) {
         Name: name,
         picUrl: imageURL,
         Description: description,
-        //Location: loc,
+        Location: LOCATION,
         Type: restaurantType,
         Kosher: kosher,
         Dishes: DishesArr

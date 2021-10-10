@@ -1,15 +1,14 @@
 
 /////////////////////////////////////////////////
 function SearchAddress() {
-
+  LOCATION="";
   var Address = document.getElementById('pac-input').value;
   govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
   ).then(function (response) {
 
     var X = response.data[0].X;
     var Y = response.data[0].Y;
-    govmap.zoomToXY({ x: X, y: Y, level: 6, marker: true });
-    console.log("contine");
+    zoomToXY(X,Y);
     let location =
     {
       "address": Address,
@@ -17,16 +16,17 @@ function SearchAddress() {
       "Y": Y
     }
     LOCATION = location;
-    console.log(LOCATION);
   });
   window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
     alert("Error: " + "address not find, try again");//or any message
     return false;
   }
 }
+function zoomToXY(X,Y)
+{
+  govmap.zoomToXY({ x: X, y: Y, level: 8, marker: true });
+}
 /////////////////////////////////////////////////
-//const EditArr = [];
-//const restaurantsArr = [];
 var LOCATION="";
 var DishesArr = [];
 var imageURL;
@@ -38,8 +38,6 @@ $(document).ready(function () //edit the data that user added/
     datesRef.child('Restaurants').child(userNow2).once('value', function (snap) { //once - only for one time connected
       snap.forEach(function (item) {
         var itemVal = item.val();
-        //EditArr.push(itemVal);
-        //console.log(EditArr);
         if (itemVal != null) {
           document.getElementById('divImageMedia').src = itemVal.picUrl;
           document.getElementById('divImageMedia').value = itemVal.picUrl;
@@ -47,6 +45,10 @@ $(document).ready(function () //edit the data that user added/
             document.getElementById('pic-form-edit').style.display = 'block';
           document.getElementById('name').value = itemVal.Name;
           document.getElementById('description').innerHTML = itemVal.Description;
+          if (itemVal.Location != "") {
+            document.getElementById('pac-input').value = itemVal.Location.address;
+            zoomToXY(itemVal.Location.X, itemVal.Location.Y)
+          }
           document.getElementById('restaurantType').value = itemVal.Type;
           if (itemVal.Kosher == 1)
             document.getElementById('kosher').checked = true;
@@ -159,7 +161,6 @@ async function AddDish(e) {
     document.getElementById('dishPrice').value = null;
     document.getElementById('dishDescription').value = null;
     DishOptionRefresh();
-    //console.log(DishesArr);
   }
   else {
     if (name.trim() == "")
@@ -177,7 +178,6 @@ async function UpdateAll(e) {
   const name = document.getElementById('name').value;
   const description = document.getElementById('description').value;
   const LogoRestPic = document.querySelector('#LogoRestPic').files[0];
-  //const loc = document.getElementById('pac-input').value;
   const restaurantType = document.getElementById('restaurantType').value;
   kosher = 0;//0=False
   if (document.getElementById('kosher').checked) { kosher = 1; }//1=True
@@ -194,7 +194,6 @@ async function UpdateAll(e) {
     }
     if(DishesArr.length==0)
       DishesArr="";
-    console.log(DishesArr);
     await sleep(3000);  
     firebase.auth().onAuthStateChanged(function (user) {
       userNow2 = user.uid;

@@ -1,7 +1,7 @@
 
 /////////////////////////////////////////////////
 function SearchAddress() {
-  LOCATION="";
+  //LOCATION="";
   var Address = document.getElementById('pac-input').value;
   govmap.geocode({ keyword: Address, type: govmap.geocodeType.AccuracyOnly }
   ).then(function (response) {
@@ -47,6 +47,7 @@ $(document).ready(function () //edit the data that user added/
           document.getElementById('description').innerHTML = itemVal.Description;
           if (itemVal.Location != "") {
             document.getElementById('pac-input').value = itemVal.Location.address;
+            LOCATION=itemVal.Location;
             zoomToXY(itemVal.Location.X, itemVal.Location.Y)
           }
           document.getElementById('restaurantType').value = itemVal.Type;
@@ -181,7 +182,7 @@ async function UpdateAll(e) {
   const restaurantType = document.getElementById('restaurantType').value;
   kosher = 0;//0=False
   if (document.getElementById('kosher').checked) { kosher = 1; }//1=True
-  if (name.trim() != "" && description.trim() != "") {
+  if (name.trim() != "" && description.trim() != ""&& LOCATION!="") {
 
     if (LogoRestPic != null) {
       UplodeImage(LogoRestPic);
@@ -215,6 +216,8 @@ async function UpdateAll(e) {
       alert('Please enter name');
     if (description.trim() == "")
       alert('Please enter description');
+    if(LOCATION=="")
+      alert('Please enter address'); 
 
   }
 }

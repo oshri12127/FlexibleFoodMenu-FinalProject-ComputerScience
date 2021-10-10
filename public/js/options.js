@@ -13,8 +13,8 @@ function SearchRestResult(loctionSearch) {
     datesRef.child('Restaurants').once('value', function (snap) { //once - only for one time connected
         snap.forEach(function (item) {
             var itemVal = item.val();
-            console.log(itemVal.RestInfo.Location.address);
-            if (itemVal.RestInfo.Location.address.includes(loctionSearch))//change to itemVal.Loction
+            const city = itemVal.RestInfo.Location.address.split(",");
+            if (city[1].includes(loctionSearch))
             {
                 var imageRest = "/images/default_dish.jpg";
                 if (itemVal.RestInfo.picUrl != "")

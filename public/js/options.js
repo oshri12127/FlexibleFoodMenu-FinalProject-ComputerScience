@@ -11,18 +11,20 @@ $(document).ready(function () //edit the data that user added/
     }
 });
 
-function SearchRestResult(loctionSearch) {
+async function SearchRestResult(loctionSearch) {
     document.getElementById("products-row").innerHTML = "";
     document.getElementById("SearchResultDiv").style.display = 'none';
     var target = document.querySelector(".products-row");
     var front; var i = 0;
     var datesRef = firebase.database().ref();
-    datesRef.child('Restaurants').once('value', function (snap) { //once - only for one time connected
-        snap.forEach(function (item) {
+    await datesRef.child('Restaurants').once('value', async function (snap) { //once - only for one time connected
+        await snap.forEach(async function (item) {
             var itemVal = item.val();
             const city = itemVal.RestInfo.Location.address.split(",");
             if (city[1].includes(loctionSearch)) {
-                if (w3ls.cart.items(0) == null  || IsInsideRadius(itemVal.RestInfo.Location.address) == true) {
+                //var response= await IsInsideRadius(itemVal.RestInfo.Location.address);
+                if (w3ls.cart.items(0) == null || await IsInsideRadius(itemVal.RestInfo.Location.address) == true) {
+                    console.log("true");
                     var imageRest = "/images/default_dish.jpg";
                     if (itemVal.RestInfo.picUrl != "")
                         imageRest = itemVal.RestInfo.picUrl;
@@ -39,7 +41,7 @@ function SearchRestResult(loctionSearch) {
                     i++;
                     target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids\">" +
 
-                        "<div id=" + item.key + " class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"EnterRestaurant(this.id)\">" +
+                        "<div id=" + item.key + " class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"EnterSelsectRestaurant(this.id)\">" +
                         "<div class=\"flipper agile-products\">" +
                         front +
                         "<div class=\"back\"><h4>" + itemVal.RestInfo.Name + "</h4><p>" + itemVal.RestInfo.Description + "</p><h4>" + itemVal.RestInfo.Type + "</h4>" +
@@ -49,55 +51,48 @@ function SearchRestResult(loctionSearch) {
                         //"<button id="+item.key+" type=\"submit\">Submit</button>"+
                         // "</form>"+
                         "</div></div></div></div>");
-
                 }
             }
         });
-        if (i == 0) {
-            document.getElementById("SearchResultDiv").style.display = 'block';
-            document.getElementById("SearchResult").innerHTML = "no result,try search agian.";
-        }
     });
+    await sleep(2000); console.log(i);
+    if (i == 0) {
+        document.getElementById("SearchResultDiv").style.display = 'block';
+        document.getElementById("SearchResult").innerHTML = "no result,try search again.";
+    }
 }
-function EnterRestaurant(click_id) 
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+function EnterSelsectRestaurant(click_id) 
 {
     localStorage.setItem('selectRestaurant', click_id);
     window.location.href = 'restaurantPage.html';
 }
-const RADIUS=5.0;
-var length;
-function IsInsideRadius(addressTarget) {
+const RADIUS=2.0;
+async function IsInsideRadius(addressTarget) {
     var length;
-    if (w3ls.cart.items(0) != null) 
-    {
-        console.log(w3ls.cart.items(0)._data.location);
+    if (w3ls.cart.items(0) != null) {
         var addressSource = w3ls.cart.items(0)._data.location;
-        console.log(addressSource,addressTarget);
-        if(CalculatDistanceBetween2Addresses(addressSource,addressTarget)==true){
-            console.log(length,RADIUS);
-        if(length<=RADIUS)
-            return true;}
+        length = await CalculatDistanceBetween2Addresses(addressSource, addressTarget);
+        console.log(length, RADIUS);
+        if (length <= RADIUS)
+            return true;
     }
     return false;
 }
-function CalculatDistanceBetween2Addresses(addressSource,addressTarget)
+async function CalculatDistanceBetween2Addresses(addressSource,addressTarget)
 {
-    console.log(addressSource,addressTarget);
+    var lengthReturn;
     var data = {
-
         "routing_type": govmap.routing_type.routing,
-
         "adresses": [addressSource,addressTarget],
-
         "costing": govmap.costing.auto  
     };
-
-    govmap.getRoutingData(data).then(function (response) {
-        console.log(response.trip.summary.length);
-        length= response.trip.summary.length;
-        console.log(length);
-        return true;
+    await govmap.getRoutingData(data).then(function (response) {
+        lengthReturn= response.trip.summary.length;
     });
+    return lengthReturn;
 }
 /*var form = document.createElement("form");
     var element1 = document.createElement("input");  

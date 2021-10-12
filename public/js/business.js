@@ -24,7 +24,7 @@ function SearchAddress() {
 }
 function zoomToXY(X,Y)
 {
-  govmap.zoomToXY({ x: X, y: Y, level: 8, marker: true });
+  govmap.zoomToXY({ x: X, y: Y, level: 8, marker: true});
 }
 /////////////////////////////////////////////////
 var LOCATION="";

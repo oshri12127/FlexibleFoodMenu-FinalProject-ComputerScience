@@ -43,7 +43,10 @@
  <!--<script src="/__/firebase/init.js"></script>-->
 </head>
 <body>
-
+	<!-- Page Preloder -->
+	<div id="preloder">
+        <div class="loader"></div>
+    </div>
 	<!-- banner -->
 	<div class="banner about-w3bnr">
 		<!-- header -->
@@ -207,13 +210,14 @@
 														{
 															center:{x: 178813, y: 664081},
 															token: '952ce76e-3d1b-4226-adea-b8c3f0a186df',
-															layers: ["GASSTATIONS","PARCEL_HOKS", "KSHTANN_ASSETS", "bus_stops", "PARCEL_ALL"],
+															visibleLayers: ["RESTAURANTS"],
+															layers: ["GASSTATIONS", "RESTAURANTS", "bus_stops"],
 															showXY: true,
 															level:3,
-															identifyOnClick: false,
+															identifyOnClick: true,
 															isEmbeddedToggle: false,
 															background: "0",
-															layersMode: 4,
+															layersMode: 2,
 															zoomButtons:true
 														});});
 										   </script>

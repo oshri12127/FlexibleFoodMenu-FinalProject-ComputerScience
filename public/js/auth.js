@@ -23,6 +23,9 @@ signOut.addEventListener('click', () => {
   });
 // auth listener
 $(document).ready(function() {
+  $(window).on('load', function () {
+    $(".loader").fadeOut();
+    $("#preloder").delay(200).fadeOut("slow");});
   firebase.auth().onAuthStateChanged(user => 
   {
     if (user) 
@@ -42,8 +45,11 @@ $(document).ready(function() {
       document.getElementById('business').style.visibility = 'hidden';
       w3ls.reset();
       firebase.auth().signOut();
+      $("#sunmitSearch").click(function(){
+        alert("To Search Please Login.");
+      });
       if (!(document.URL.includes("login.html")||document.URL.includes("signup.html")||document.URL.includes("index.html"))) {
-        location.href = 'index.html';
+        location.href = 'login.html';
       }
     }
   })

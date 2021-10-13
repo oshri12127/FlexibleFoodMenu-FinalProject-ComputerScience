@@ -16,28 +16,25 @@ const signOut = document.querySelector('.sign-out');
 
 // sign out
 signOut.addEventListener('click', () => {
-    w3ls.reset();
-    firebase.auth().signOut()
-      .then(() => console.log('signed out'));
-        
-  });
+  w3ls.reset();
+  firebase.auth().signOut()
+    .then(() => console.log('signed out'));
+});
 // auth listener
-$(document).ready(function() {
+$(document).ready(function () {
   $(window).on('load', function () {
     $(".loader").fadeOut();
-    $("#preloder").delay(200).fadeOut("slow");});
-  firebase.auth().onAuthStateChanged(user => 
-  {
-    if (user) 
-    {
+    $("#preloder").delay(200).fadeOut("slow");
+  });
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
       $('#login').hide();
       $('#signup').hide();
       $('#signout').show();
       $('#emailUserHello').show();
-      isBusinessAccount(user); 
-    } 
-    else
-    {
+      isBusinessAccount(user);
+    }
+    else {
       $('#login').show();
       $('#signup').show();
       $('#signout').hide();
@@ -45,10 +42,10 @@ $(document).ready(function() {
       document.getElementById('business').style.visibility = 'hidden';
       w3ls.reset();
       firebase.auth().signOut();
-      $("#sunmitSearch").click(function(){
+      $("#sunmitSearch").click(function () {
         alert("To Search Please Login.");
       });
-      if (!(document.URL.includes("login.html")||document.URL.includes("signup.html")||document.URL.includes("index.html"))) {
+      if (!(document.URL.includes("login.html") || document.URL.includes("signup.html") || document.URL.includes("index.html"))) {
         location.href = 'login.html';
       }
     }
@@ -58,33 +55,23 @@ $(document).ready(function() {
 function isBusinessAccount(user) {
   const emailUserHello = document.getElementById('emailUserHello');
   const ref = firebase.database().ref();
-        const userM=user.uid;
-        ref.child('Users').child(userM).once('value', function(snap) { // once - only for one time connected
-          snap.forEach(function(item) 
-          {
-            const itemVal = item.val();
-            emailUserHello.innerHTML = 'Hello ' + itemVal.Name;
-            if (itemVal.Account==1) {//  business=1
-              if(document.URL.includes("index.html"))
-              {
-                document.getElementById('business').style.visibility = 'visible';
-              }
-              else if((document.URL.includes("login.html"))||(document.URL.includes("signup.html")))
-              {
-                location.href = 'businessPage.html';
-              }
-            }
-            else
-            {
-              if(document.URL.includes("index.html"))
-              {
-                document.getElementById('business').style.visibility = 'hidden';
-              }
-              else
-              {
-                location.href = 'index.html';
-              }
-            }
-          });
-        });
+  const userM = user.uid;
+  ref.child('Users').child(userM).once('value', function (snap) { // once - only for one time connected
+    snap.forEach(function (item) {
+      const itemVal = item.val();
+      emailUserHello.innerHTML = 'Hello ' + itemVal.Name;
+      if (itemVal.Account == 1) {//  business=1
+        document.getElementById('business').style.visibility = 'visible';
+        if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html"))) {
+          location.href = 'businessPage.html';
+        }
+      }
+      else {
+        document.getElementById('business').style.visibility = 'hidden';
+        if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html")) || (document.URL.includes("businessPage.html"))) {
+          location.href = 'index.html';
+        }
+      }
+    });
+  });
 }

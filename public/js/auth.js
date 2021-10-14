@@ -22,10 +22,11 @@ signOut.addEventListener('click', () => {
 });
 // auth listener
 $(document).ready(function () {
+
   $(window).on('load', function () {
     $(".loader").fadeOut();
     $("#preloder").delay(200).fadeOut("slow");
-  });
+  })
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       $('#login').hide();
@@ -50,6 +51,10 @@ $(document).ready(function () {
       }
     }
   })
+  if(document.URL.includes("index.html"))
+  {
+    carousel();
+  }
 });
 
 function isBusinessAccount(user) {
@@ -71,6 +76,25 @@ function isBusinessAccount(user) {
         if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html")) || (document.URL.includes("businessPage.html"))) {
           location.href = 'index.html';
         }
+      }
+    });
+  });
+}
+
+function carousel() {
+  var index = 1;
+  var datesRef = firebase.database().ref();
+  datesRef.child('Restaurants').once('value', function (snap) { //once - only for one time connected
+    snap.forEach(function (item) {
+      var itemVal = item.val();
+      const city = itemVal.RestInfo.Location.address.split(",");
+      if (city[1].includes("תל אביב")) {
+        document.getElementById('img-' + index).src = itemVal.RestInfo.picUrl;
+        document.getElementById('h4-' + index).innerHTML = itemVal.RestInfo.Name;
+        document.getElementById('span-' + index).innerText = itemVal.RestInfo.Description;
+        index++;
+        if(index == 7)
+          return;
       }
     });
   });

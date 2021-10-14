@@ -598,13 +598,14 @@ img.w3order-img {
 /*-- //deals --*/ 
 /*-- dishes --*/
 .spldishes-w3left {
-    padding: 2.3em;
+    padding: 4.6em;
     background-color: #fd463e;
 	-webkit-transition:.5s all;
 	-moz-transition:.5s all;
 	-o-transition:.5s all;
 	-ms-transition:.5s all;
 	transition:.5s all;
+    height:auto;
 }
 .spldishes-agileinfo:hover .spldishes-w3left {
     background-color: #09c4dc;
@@ -2840,7 +2841,7 @@ ul.nav.navbar-nav.navbar-right {
     padding: 0 1em;
 }
 .spldishes-w3left {
-    padding: 3.05em 2em; 
+    padding: 5.17em 5em; 
 }
 .social-icons.w3-agile-icons {
     margin-top: 2em;

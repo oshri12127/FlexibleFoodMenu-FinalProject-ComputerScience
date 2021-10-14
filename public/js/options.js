@@ -24,7 +24,6 @@ async function SearchRestResult(loctionSearch) {
             if (city[1].includes(loctionSearch)) {
                 //var response= await IsInsideRadius(itemVal.RestInfo.Location.address);
                 if (w3ls.cart.items(0) == null || await IsInsideRadius(itemVal.RestInfo.Location.address) == true) {
-                    console.log("true");
                     var imageRest = "/images/default_dish.jpg";
                     if (itemVal.RestInfo.picUrl != "")
                         imageRest = itemVal.RestInfo.picUrl;
@@ -55,7 +54,7 @@ async function SearchRestResult(loctionSearch) {
             }
         });
     });
-    await sleep(2000); console.log(i);
+    await sleep(2000);
     if (i == 0) {
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "no result,try search again.";
@@ -63,47 +62,31 @@ async function SearchRestResult(loctionSearch) {
 }
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-function EnterSelsectRestaurant(click_id) 
-{
+}
+function EnterSelsectRestaurant(click_id) {
     localStorage.setItem('selectRestaurant', click_id);
     window.location.href = 'restaurantPage.html';
 }
-const RADIUS=2.0;
+const RADIUS = 2.0;
 async function IsInsideRadius(addressTarget) {
     var length;
     if (w3ls.cart.items(0) != null) {
         var addressSource = w3ls.cart.items(0)._data.location;
         length = await CalculatDistanceBetween2Addresses(addressSource, addressTarget);
-        console.log(length, RADIUS);
         if (length <= RADIUS)
             return true;
     }
     return false;
 }
-async function CalculatDistanceBetween2Addresses(addressSource,addressTarget)
-{
+async function CalculatDistanceBetween2Addresses(addressSource, addressTarget) {
     var lengthReturn;
     var data = {
         "routing_type": govmap.routing_type.routing,
-        "adresses": [addressSource,addressTarget],
-        "costing": govmap.costing.auto  
+        "adresses": [addressSource, addressTarget],
+        "costing": govmap.costing.auto
     };
     await govmap.getRoutingData(data).then(function (response) {
-        lengthReturn= response.trip.summary.length;
+        lengthReturn = response.trip.summary.length;
     });
     return lengthReturn;
 }
-/*var form = document.createElement("form");
-    var element1 = document.createElement("input");  
-
-    form.method = "GET";
-    form.action = "/restaurantPage.html";   
-
-    element1.value=click_id;
-    element1.name="click_id";
-    form.appendChild(element1);  
-
-    document.body.appendChild(form);
-
-    form.submit();*/

@@ -26,7 +26,7 @@ $(document).ready(function () {
                 }
                 i++;
                 target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-3 col-md-3 col-lg-3  product-grids\">" +
-                    "<div id=\""+dish.name+"\" class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"AddModelDish(this.id)\" data-toggle=\"modal\" data-target=\"#myModal1\">" +
+                    "<div id=\"" + dish.name + "\" class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"AddModelDish(this.id)\" data-toggle=\"modal\" data-target=\"#myModal1\">" +
                     "<div class=\"flipper agile-products\">" +
                     front +
                     "<div class=\"back\"><h4>" + dish.name + "</h4><p>" + dish.dishDescription + "</p><h6>" + dish.dishPrice + "<sup><i class=\"fa fa-shekel\"></i></sup></h6>" +
@@ -52,8 +52,8 @@ function AddModelDish(NameDish) {
                     document.getElementById('priceToCart').value = dish.dishPrice;
                     document.getElementById('FullLocation').value = itemVal.Location.address;
                     const city = itemVal.Location.address.split(",");
-                    document.getElementById('name+location').value = itemVal.Name+" - "+city[1];
-                    document.getElementById('inputSpinnerAmountCart').value = 1;               
+                    document.getElementById('name+location').value = itemVal.Name + " - " + city[1];
+                    document.getElementById('inputSpinnerAmountCart').value = 1;
                 }
             });
         });

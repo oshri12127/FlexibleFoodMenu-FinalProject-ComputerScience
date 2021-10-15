@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flexible FoodMenu| Restaurant Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
+<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<!-- //Custom Theme files --> 
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>  
+<!-- //js -->
+<!-- web-fonts -->   
+<link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
+<link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+<!-- //web-fonts -->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <!--<script src="/__/firebase/8.4.3/firebase-app.js"></script>
+
+ <script defer src="/__/firebase/8.4.3/firebase-auth.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-database.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-firestore.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-functions.js"></script>  -->
+ <!--<script defer src="/__/firebase/8.4.3/firebase-messaging.js"></script>-->
+ <!--<script defer src="/__/firebase/8.4.3/firebase-storage.js"></script>-->
+
+ <!-- Initialize Firebase -->
+ <!--<script src="/__/firebase/init.js"></script>-->
+</head>
+<body> 
+	<!-- Page Preloder -->
+	<div id="preloder">
+        <div class="loader"></div>
+    </div>
+	<!-- banner -->
+	<div class="banner about-w3bnr">
+		<!-- header -->
+		<div class="header">
+			<div class="w3ls-header"><!-- header-one --> 
+				<div class="container">
+					<div class="w3ls-header-left">
+						<ul> 
+							<li class="head-dpdn">
+								<a id="emailUserHello"><i aria-hidden="true"></i> Hello</a>
+							</li> 
+						</ul>
+					</div>
+					<div class="w3ls-header-right">
+						<ul> 
+							<li class="head-dpdn">
+								<a href="login.html" id="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="signup.html" id="signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="" id="signout"class="sign-out"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+							
+						</ul>
+					</div>
+					<div class="clearfix"> </div> 
+				</div>
+			</div>
+			<!-- //header-one -->    
+			<!-- navigation -->
+			<div class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>  
+							<h1><a href="index.html">Flexible FoodMenu<span>The Freedom to Choose</span></a></h1>
+						</div> 
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<!-- Menu -->
+								<li id="business"><a href="businessPage.html">Business Page</a></li>
+								<li ><a href="optionsPage.html">Restaurants</a></li> 
+							</ul>
+						</div>
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div> 
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation --> 
+		</div>
+		<!-- //header-end --> 
+	</div>
+	<!-- //banner -->    
+	<!-- breadcrumb -->  
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="optionsPage.html"> Restaurants</a></li>  
+			<li class="active">Restaurant Page</li>
+		</ol>
+	</div>
+	<!-- //breadcrumb -->
+	<!-- products -->
+<div class="products">
+    <div class="container">
+
+        <div class="product-top" id="PicRestPreview">
+            <h4 style="font-size: 60px;color: whitesmoke;" id="NameRestPreview"></h4>
+			<ul> 
+				<li class="dropdown head-dpdn">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter By Food Type<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a style=cursor:pointer; onclick="filterSelection('all')"> Show all</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Fast Food')">Fast Food</a></li> 
+						<li><a style=cursor:pointer; onclick="filterSelection('Cafe')" >Cafe</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Salad')">Salad</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Sushi')">Sushi</a></li> 
+						<li><a style=cursor:pointer; onclick="filterSelection('Vegan')" >Vegan</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Ethnic')">Ethnic</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Healthy')">Healthy</a></li> 
+						<li><a style=cursor:pointer; onclick="filterSelection('Sandwich')" >Sandwich</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Pasta')">Pasta</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Soup')">Soup</a></li> 
+						<li><a style=cursor:pointer; onclick="filterSelection('Breakfast')" >Breakfast</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Chef')">Chef</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Homemade')">Homemade</a></li> 
+						<li><a style=cursor:pointer; onclick="filterSelection('Dessert')" >Dessert</a></li>
+						<li><a style=cursor:pointer; onclick="filterSelection('Drinks')">Drinks</a></li>  
+					</ul> 
+				</li>
+			</ul>
+            <div class="clearfix"> </div>
+        </div>
+
+        <div class="products-row" id="products-row">
+        </div>
+		<div id="FilterResultDiv" style="display: none;">
+			<br/>
+			<br/>
+			<h2 id="FilterResult"></h2>
+		</div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+    <!-- //products -->
+    <!-- modal -->
+    <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog"
+        aria-labelledby="myModal1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <section>
+                    <div class="modal-body">
+                        <div class="col-md-5 modal_body_left">
+                            <img src="images/default_dish.jpg" alt=" " class="img-responsive" id="model_img-responsive">
+                        </div>
+                        <div class="col-md-7 modal_body_right single-top-right">
+                            <h3 id="ModelNameDish" class="item_name">NULL</h3>
+                            <div class="single-price">
+                                <ul>
+                                    <li id="ModelPrice">0</li>
+                                </ul>
+                            </div>
+                            <p id="modelDescription" class="single-price-text"> </p>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <!--<input id="numOfAddToCart" type="hidden" name="add" value="2" /><!-->
+                                <input id="nameToCart" type="hidden" name="w3ls_item" />
+                                <input id="priceToCart" type="hidden" name="amount" />
+                                <input id="name+location" type="hidden" name="item_number" />
+                                <input type="hidden" name="currency_code" value='ILS' />
+								<input id="FullLocation" type="hidden" name="location" />
+                                <button type="submit" class="w3ls-cart"><i
+                                        class="fa fa-cart-plus" aria-hidden="true"></i> Add to
+                                    cart</button>
+                                    <input name="quantity" class="w3lscartspinner" id="inputSpinnerAmountCart" type="number"  min="1"  step="1"/>
+                                </form>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- //modal -->  
+	<!-- footer -->
+	<div class="footer agileits-w3layouts">
+		<div class="container">
+			<div class="w3_footer_grids"> 
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Links</h3>
+					<ul>
+						<li><a href="index.html">Index</a></li> 
+						<li><a href="optionsPage.html">Restaurants</a></li>
+						<li><a href="businessPage.html">Business Page(only to Business accunt) </a></li> 
+					</ul>  
+				</div>
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Access</h3>
+					<ul>  
+						<li><a href="login.html">Login</a></li>  
+						<li><a href="signup.html">Registration</a></li>
+					</ul>   
+				</div>
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Contact Us</h3>
+					<ul>
+						<li style="color: #999;">Contact us by Email for any problem or question.</li>
+						<li style="color: #999;">Email: oshri12127@gmail.com</li>   
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div> 
+	</div>
+	<!-- //footer -->
+	<!-- cart-js -->
+	<script src="js/minicart.js"></script>
+	<script>
+        
+        w3ls.render();
+        //<input id="discount_rate_cart" type="hidden" name="discount_amount_cart" value="50" />
+    </script>  
+	<!-- //cart-js -->	
+	
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/Restaurant.js"></script>
+</body>
+</html>

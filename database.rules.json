@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "Users": {
+      "$uid": {
+        // Allow only authenticated content owners access to their data
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+      "Restaurants": {
+      "$uid": {
+      
+         ".write": "root.child('Users').child(auth.uid).child('info').child('Account').val() == 1",
+      },
+        ".read": true
+    }
+  }
+}

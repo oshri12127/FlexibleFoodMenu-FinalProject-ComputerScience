@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flexible FoodMenu| Restaurants</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
+<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<!-- //Custom Theme files --> 
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>  
+<!-- //js -->
+<!-- web-fonts -->   
+<link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
+<link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+<!-- //web-fonts -->
+<script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <!--<script src="/__/firebase/8.4.3/firebase-app.js"></script>
+
+ <script defer src="/__/firebase/8.4.3/firebase-auth.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-database.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-firestore.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-functions.js"></script>  -->
+ <!--<script defer src="/__/firebase/8.4.3/firebase-messaging.js"></script>-->
+ <!--<script defer src="/__/firebase/8.4.3/firebase-storage.js"></script>-->
+
+ <!-- Initialize Firebase -->
+ <!--<script src="/__/firebase/init.js"></script>-->
+</head>
+<body> 
+	<!-- Page Preloder -->
+	<div id="preloder">
+        <div class="loader"></div>
+    </div>
+	<!-- banner -->
+	<div class="banner about-w3bnr">
+		<!-- header -->
+		<div class="header">
+			<div class="w3ls-header"><!-- header-one --> 
+				<div class="container">
+					<div class="w3ls-header-left">
+						<ul> 
+							<li class="head-dpdn">
+								<a id="emailUserHello"><i aria-hidden="true"></i> Hello</a>
+							</li> 
+						</ul>
+					</div>
+					<div class="w3ls-header-right">
+						<ul> 
+							<li class="head-dpdn">
+								<a href="login.html" id="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="signup.html" id="signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="" id="signout"class="sign-out"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+							
+						</ul>
+					</div>
+					<div class="clearfix"> </div> 
+				</div>
+			</div>
+			<!-- //header-one -->    
+			<!-- navigation -->
+			<div class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>  
+							<h1><a href="index.html">Flexible FoodMenu<span>The Freedom to Choose</span></a></h1>
+						</div> 
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<!-- Menu -->
+								<li id="business"><a href="businessPage.html">Business Page</a></li>
+								<li ><a href="optionsPage.html">Restaurants</a></li> 
+							</ul>
+						</div>
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div> 
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation --> 
+		</div>
+		<!-- //header-end --> 
+	</div>
+	<!-- //banner -->    
+	<!-- breadcrumb -->  
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Restaurants</li>
+		</ol>
+	</div>
+	<!-- //breadcrumb -->
+	<!-- options-page -->
+    <div class="products">	 
+		<div class="container">
+			<div class="col-md-9 product-w3ls-right">
+				<div class="product-top"
+					style="height: 100px;background-color: #f1efef; box-shadow: 0 0 14px 7px rgb(224 224 224 / 35%);">
+					<h4 style="font-size: 60px;color: black;">Restaurants</h4>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-12">
+					<div class="products-row" id="products-row">
+					</div>
+					<div id="SearchResultDiv" style="display: none;">
+						<br/>
+						<br/>
+						<h2 id="SearchResult"></h2>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 rsidebar">
+				<div class="rsidebar-top">
+					<div class="slider-left" style="text-align: center;">
+						<h4>Area</h4>
+						<input id="Search" name="Search" type="text" placeholder="Area Name(In Hebrew)" required="">
+						<br>
+						<br>
+						<input id="sunmitSearch" onclick="SearchRestResult(document.getElementById('Search').value)" type="submit" value="Search">
+					</div>
+					<br>
+					<div class="sidebar-row">
+						<h4 style="text-align: center;">By Cuisine</h4>
+						<ul class="faq">
+							<li class="item1"><a href="#">Restaurant type<span class="glyphicon glyphicon-menu-down"></span></a>
+								<ul>
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Meat')">Meat</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Dairy')">Dairy</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Parveh')">Parveh</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Vegan')">Vegan</a></li>
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('all')">All</a></li>										
+								</ul>
+							</li>
+						</ul>
+						<div class="clearfix"> </div> 
+						<!-- script for tabs -->
+						<script type="text/javascript">
+							$(function() {
+							
+								var menu_ul = $('.faq > li > ul'),
+									   menu_a  = $('.faq > li > a');
+								
+								menu_ul.hide();
+							
+								menu_a.click(function(e) {
+									e.preventDefault();
+									if(!$(this).hasClass('active')) {
+										menu_a.removeClass('active');
+										menu_ul.filter(':visible').slideUp('normal');
+										$(this).addClass('active').next().stop(true,true).slideDown('normal');
+									} else {
+										$(this).removeClass('active');
+										$(this).next().stop(true,true).slideUp('normal');
+									}
+								});
+							
+							});
+						</script>
+						<!-- script for tabs -->
+					</div>
+					<br>
+					<div class="sidebar-row">
+						<h4 style="text-align: center;">by Kosher</h4>
+						<div class="row row1 scroll-pane">  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kosher</label>
+							
+						</div>
+					</div>
+					<br>
+						<br>
+						<br>
+						<br>
+						
+								 
+				</div>
+			</div>
+			<div class="clearfix"> </div> 
+		</div>
+	</div>
+	<!-- //options-page -->  
+	<!-- footer -->
+	<div class="footer agileits-w3layouts">
+		<div class="container">
+			<div class="w3_footer_grids"> 
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Links</h3>
+					<ul>
+						<li><a href="index.html">Index</a></li> 
+						<li><a href="optionsPage.html">Restaurants</a></li>
+						<li><a href="businessPage.html">Business Page(only to Business accunt) </a></li> 
+					</ul>  
+				</div>
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Access</h3>
+					<ul>  
+						<li><a href="login.html">Login</a></li>  
+						<li><a href="signup.html">Registration</a></li>
+					</ul>   
+				</div>
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Contact Us</h3>
+					<ul>
+						<li style="color: #999;">Contact us by Email for any problem or question.</li>
+						<li style="color: #999;">Email: oshri12127@gmail.com</li>   
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div> 
+	</div>
+	<!-- //footer -->
+	<!-- cart-js -->
+	<script src="js/minicart.js"></script>
+	<script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+        	var items, len, i;
+
+        	if (this.subtotal() > 0) {
+        		items = this.items();
+
+        		for (i = 0, len = items.length; i < len; i++) { 
+        		}
+        	}
+        });
+    </script>  
+	<!-- //cart-js -->
+    <!-- the jScrollPane script -->
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" id="sourcecode">
+		$(function()
+		{
+			$('.scroll-pane').jScrollPane();
+		});
+	</script>
+	<!-- //the jScrollPane script -->
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script> <!-- the mouse wheel plugin --> 	
+	
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/options.js"></script>
+</body>
+</html>

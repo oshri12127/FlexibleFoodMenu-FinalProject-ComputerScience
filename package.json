@@ -1,0 +1,29 @@
+{
+	"name": "project",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"dev": "nodemon server.js"
+		
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^7.7.0",
+		"eslint-config-google": "^0.14.0",
+		"husky": "^4.2.5",
+		"jest": "^26.4.2",
+		"nodemon": "^2.0.4"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm test",
+			"pre-push": "npm test"
+		}
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}

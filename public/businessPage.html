@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Flexible FoodMenu| Business page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- Custom Theme files -->
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
+	<!-- //Custom Theme files -->
+	<!-- js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<!-- //js -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+	<!-- //web-fonts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <!--<script src="/__/firebase/8.4.3/firebase-app.js"></script>
+
+ <script defer src="/__/firebase/8.4.3/firebase-auth.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-database.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-firestore.js"></script>
+ <script defer src="/__/firebase/8.4.3/firebase-functions.js"></script>  -->
+ <!--<script defer src="/__/firebase/8.4.3/firebase-messaging.js"></script>-->
+ <!--<script defer src="/__/firebase/8.4.3/firebase-storage.js"></script>-->
+
+ <!-- Initialize Firebase -->
+ <!--<script src="/__/firebase/init.js"></script>-->
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+        <div class="loader"></div>
+    </div>
+	<!-- banner -->
+	<div class="banner about-w3bnr">
+		<!-- header -->
+		<div class="header">
+			<div class="w3ls-header">
+				<!-- header-one -->
+				<div class="container">
+					<div class="w3ls-header-left">
+						<ul> 
+							<li class="head-dpdn">
+								<a id="emailUserHello"><i aria-hidden="true"></i> Hello</a>
+							</li> 
+						</ul>
+					</div>
+					<div class="w3ls-header-right">
+						<ul>
+							<li class="head-dpdn">
+								<a href="login.html" id="login"><i class="fa fa-sign-in" aria-hidden="true"></i>
+									Login</a>
+							</li>
+							<li class="head-dpdn">
+								<a href="signup.html" id="signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
+									Signup</a>
+							</li>
+							<li class="head-dpdn">
+								<a href="" id="signout" class="sign-out"><i class="fa fa-sign-out"
+										aria-hidden="true"></i> Sign out</a>
+
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<!-- //header-one -->
+			<!-- navigation -->
+			<div class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse"
+								data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a href="index.html">Flexible FoodMenu<span>The Freedom to Choose</span></a></h1>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<!-- Menu -->
+								<li id="business"><a href="businessPage.html">Business Page</a></li>
+								<li ><a href="optionsPage.html">Restaurants</a></li> 
+							</ul>
+						</div>
+						<div class="cart cart box_1">
+							<form action="#" method="post" class="last">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i
+										class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation -->
+		</div>
+		<!-- //header-end -->
+	</div>
+	<!-- //banner -->
+	<!-- breadcrumb -->
+	<div class="container">
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+			<li class="active">businessPage</li>
+		</ol>
+	</div>
+	<!-- //breadcrumb -->
+	<!-- business-page -->
+	<div class="login-page about">
+		<img class="login-w3img" src="images/img3.jpg" alt="">
+		<div class="container">
+			<h3 class="w3ls-title w3ls-title1">Business Page</h3>
+			<div class="grid_3 grid_5" style="width: 80%;">
+				<div class="bs-example bs-example-tabs w3" role="tabpanel" data-example-id="togglable-tabs">
+					<ul id="myTab" class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#Edit" id="Edit-tab" role="tab"
+								data-toggle="tab" aria-controls="Edit" aria-expanded="true">Add/Edit</a></li>
+						<li role="presentation" class=""><a href="#Preview" role="tab" id="Preview-tab"
+								data-toggle="tab" aria-controls="Preview" aria-expanded="false" onclick="Preview()">Preview</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade active in" id="Edit" aria-labelledby="Edit-tab">
+							<div class="panel-group" id="accordion">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Name &
+												Description</a>
+										</h4>
+									</div>
+									<div id="collapse1" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="form-group">
+												<label for="name" style="font-size: large;">Name:</label>
+												<input class="form-control input-lg" id="name" type="text"
+													style="width: 50%;">
+											</div>
+											<div class="form-group">
+												<label for="description" style="font-size: large;">Description:</label>
+												<textarea class="form-control" rows="5" id="description"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapse2">Picture</a>
+										</h4>
+									</div>
+									<div id="collapse2" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="form-group" id="pic-form-edit" style="display: none;">
+												<div class="ml-2 col-sm-6" style="float: right;">
+													<img  id="divImageMedia" class="img-thumbnail">
+													<br />
+													<label for="divImageMedia" style="font-size: medium;">To change the logo image will choose another image.</label>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="LogoRestPic" style="font-size: large;">Logo image:</label>
+												<br />
+												<br />
+												<input type="file" accept="image/*" capture="camera" id="LogoRestPic">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapse3">Location</a>
+										</h4>
+									</div>
+									<div id="collapse3" class="panel-collapse collapse">
+										<div class="panel-body">
+											<input id="pac-input" class="controls" type="text"
+												placeholder="Search Address in Hebrew" style="width: 50%;" />
+												<button onclick="SearchAddress()" style="width: 20%;">Search</button>
+											<div id="map" style="height: 15cm;"></div>
+											<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+											<script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
+											<script type="text/javascript">
+												$(document).ready(function ()
+												{
+													govmap.createMap('map', 
+														{
+															center:{x: 178813, y: 664081},
+															token: '952ce76e-3d1b-4226-adea-b8c3f0a186df',
+															visibleLayers: ["GASSTATIONS", "RESTAURANTS"],
+															layers: ["GASSTATIONS", "RESTAURANTS"],
+															showXY: true,
+															level:3,
+															identifyOnClick: true,
+															isEmbeddedToggle: false,
+															background: "0",
+															layersMode: 3,
+															zoomButtons:true
+														});});
+										   </script>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapse4">Details</a>
+										</h4>
+									</div>
+									<div id="collapse4" class="panel-collapse collapse">
+										<div class="panel-body">
+
+											<div class="form-group">
+
+												<label for="restaurantType:" style="font-size: large;">Restaurant
+													type:</label>
+												<select class="form-control" id="restaurantType" style="width: 20%;">
+													<option selected="selected">Meat</option>
+													<!--value="1"-->
+													<option>Dairy</option>
+													<option>Parveh</option>
+													<option>Vegan</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label class="checkbox">
+													<input type="checkbox" name="kosher" id="kosher">
+													<i></i>
+													<span style="font-size: large;">Kosher</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapse5">Dishes</a>
+										</h4>
+									</div>
+									<div id="collapse5" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="form-group">
+												<label for="DishOption" style="font-size: large;">Choose Dish:</label>
+												<select style="width: 25%;" class="form-control" id="DishOption">
+													<option selected="selected">Add new dish</option>
+												</select>
+											</div>
+											<div class="form-group" id="dishPic-form-edit" style="display: none;">
+												<div class="ml-2 col-sm-5" style="float: right;">
+													<label for="divDishImageMedia" style="font-size: large;">Dish image:</label>
+													<img  id="divDishImageMedia" class="img-thumbnail">
+													<br />
+													<label for="divDishImageMedia" style="font-size: medium;">To change the dish image will choose another image.</label>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="dishName" style="font-size: large;">Dish Name:</label>
+												<input class="form-control input" id="dishName" style="width: 25%;">
+											</div>
+											
+											<div class="form-group">
+												<label for="dishPic" style="font-size: large;">Dish image:</label>
+												<input type="file" accept="image/*" capture="camera" id="dishPic">
+											</div>
+											
+											<div class="form-group">
+												<label for="dishType:" style="font-size: large;">Type:</label>
+												<select class="form-control" id="dishType" style="width: 25%;">
+													<option selected="selected">Fast Food</option>
+													<option>Cafe </option>
+													<option>Salad</option>
+													<option>Sushi</option>
+													<option>Vegan</option>
+													<option>Ethnic</option>
+													<option>Healthy</option>
+													<option>Sandwich</option>
+													<option>Pasta</option>
+													<option>Soup</option>
+													<option>Breakfast</option>
+													<option>Chef</option>
+													<option>Homemade</option>
+													<option>Dessert</option>
+													<option>Drinks</option>
+												</select>
+											</div>
+											<form class="form-inline">
+												<div class="form-group">
+													<label for="dishPrice" style="font-size: large;">Price:</label>
+													<input class="form-control input" id="dishPrice" type="number" min=0>
+												</div>
+												<div class="form-group">
+													<i class="fa fa-shekel"></i>
+												</div>
+											</form>
+											<br>
+											<div class="form-group">
+												<label for="dishDescription"
+													style="font-size: large;">Description:</label>
+												<textarea class="form-control" rows="5" id="dishDescription"></textarea>
+											</div>
+											<div class="col-md-12 text-center">
+												<button type="button" id="UplodeDish"
+													class="btn btn-default btn-lg btn-block"
+													onclick="AddDish()">Save</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+
+										<button type="button" id="UpdateAll" class="btn btn-default btn-lg btn-block"
+											onclick="UpdateAll()">
+											<h4>Update</h4>
+										</button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade w3" id="Preview" aria-labelledby="Preview-tab">
+							<!-- products -->
+							<div class="product-top" id="PicRestPreview">
+								<h4 style="font-size: 60px;color: whitesmoke;" id="NameRestPreview">NULL </h4>
+								
+								<div class="clearfix"> </div>
+							</div>
+							<div class="products-row" id="products-row">
+							</div>
+							<!-- //products -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //business-page -->
+	<!-- footer -->
+	<div class="footer agileits-w3layouts">
+		<div class="container">
+			<div class="w3_footer_grids"> 
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Links</h3>
+					<ul>
+						<li><a href="index.html">Index</a></li> 
+						<li><a href="optionsPage.html">Restaurants</a></li>
+						<li><a href="businessPage.html">Business Page(only to Business accunt) </a></li> 
+					</ul>  
+				</div>
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Access</h3>
+					<ul>  
+						<li><a href="login.html">Login</a></li>  
+						<li><a href="signup.html">Registration</a></li>
+					</ul>   
+				</div>
+				<div class="col-xs-6 col-sm-4 footer-grids w3-agileits">
+					<h3>Contact Us</h3>
+					<ul>
+						<li style="color: #999;">Contact us by Email for any problem or question.</li>
+						<li style="color: #999;">Email: oshri12127@gmail.com</li>   
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div> 
+	</div>
+	<!-- //footer -->
+	<!-- cart-js -->
+	<script src="js/minicart.js"></script>
+	<script>
+		w3ls.render();
+
+		w3ls.cart.on('w3sb_checkout', function (evt) {
+			var items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) 
+				{
+					items[i].set('shipping', 0);
+                    items[i].set('shipping2', 0);
+				}
+			}
+		});
+	</script>
+	<!-- //cart-js -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+	<script src="js/bootstrap.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/business.js"></script>
+</body>
+
+</html>

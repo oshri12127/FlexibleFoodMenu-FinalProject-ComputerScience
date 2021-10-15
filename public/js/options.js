@@ -57,8 +57,9 @@ async function SearchRestResult(loctionSearch) {
             }
         });
     });
-    filterSelection("all"); 
-    //await sleep(2000);
+     
+    await sleep(2000);
+    filterSelection("all");
     if (i == 0) {
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "no result,try search again.";

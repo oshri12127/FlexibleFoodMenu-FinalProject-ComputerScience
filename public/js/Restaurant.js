@@ -65,7 +65,6 @@ function filterSelection(c) {
   var x, i;
   document.getElementById("FilterResultDiv").style.display = 'none';
   x = document.getElementsByClassName("col-xs-6 col-sm-3 col-md-3 col-lg-3  product-grids");
-  console.log(x,c);
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");

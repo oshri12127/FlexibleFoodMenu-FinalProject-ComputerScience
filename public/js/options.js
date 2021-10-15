@@ -4,8 +4,11 @@ $(document).ready(function () //edit the data that user added/
     const result = urlParams.get('Search');
     if (result != null) {
         SearchRestResult(result);
+        document.getElementById("Search").setAttribute('value', result);
     }
     else {
+        //console.log("rnter");
+        //document.getElementById("Search").val=null;
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "Enter your area name in search box.";
     }
@@ -38,7 +41,7 @@ async function SearchRestResult(loctionSearch) {
                             "</div><img src=\"" + imageRest + "\" class=\"img-responsive\" alt=\"img\"></div>";
                     }
                     i++;
-                    target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids\">" +
+                    target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids "+ itemVal.RestInfo.Type +" hide\">" +
 
                         "<div id=" + item.key + " class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"EnterSelsectRestaurant(this.id)\">" +
                         "<div class=\"flipper agile-products\">" +
@@ -54,7 +57,8 @@ async function SearchRestResult(loctionSearch) {
             }
         });
     });
-    await sleep(2000);
+    filterSelection("all"); 
+    //await sleep(2000);
     if (i == 0) {
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "no result,try search again.";
@@ -89,4 +93,46 @@ async function CalculatDistanceBetween2Addresses(addressSource, addressTarget) {
         lengthReturn = response.trip.summary.length;
     });
     return lengthReturn;
+}
+
+var flagFilterResultDiv;
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids");
+    if (document.getElementById("SearchResult").innerHTML != "no result,try search again." && document.getElementById("SearchResult").innerHTML != "Enter your area name in search box.") {
+        document.getElementById("SearchResultDiv").style.display = 'none';
+        flagFilterResultDiv = 1;
+    }
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        flagFilterResultDiv = 0;
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+    if (flagFilterResultDiv == 0) {
+        document.getElementById("SearchResultDiv").style.display = 'block';
+        document.getElementById("SearchResult").innerHTML = "There are no " + c + " restaurants in this area.";
+    }
+}
+
+function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    flagFilterResultDiv = 1;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+    }
+}
+
+function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
 }

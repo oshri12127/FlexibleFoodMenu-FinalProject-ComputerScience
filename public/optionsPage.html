@@ -140,39 +140,24 @@
 			</div>
 			<div class="col-md-3 rsidebar">
 				<div class="rsidebar-top">
-					<div class="slider-left">
-						<h4>CHOOSE BY AGE</h4>            
-						<div class="row row1 scroll-pane">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Youngers</label>  
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Adults</label> 
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Senior Citizen</label>  
-						</div> 
+					<div class="slider-left" style="text-align: center;">
+						<h4>Area</h4>
+						<input id="Search" name="Search" type="text" placeholder="Area Name(In Hebrew)" required="">
+						<br>
+						<br>
+						<input id="sunmitSearch" onclick="SearchRestResult(document.getElementById('Search').value)" type="submit" value="Search">
 					</div>
+					<br>
 					<div class="sidebar-row">
-						<h4>By Cuisine</h4>
+						<h4 style="text-align: center;">By Cuisine</h4>
 						<ul class="faq">
-							<li class="item1"><a href="#">Indian Food<span class="glyphicon glyphicon-menu-down"></span></a>
+							<li class="item1"><a href="#">Restaurant type<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
-									<li class="subitem1"><a href="#">Breakfast</a></li>										
-									<li class="subitem1"><a href="#">Lunch</a></li>										
-									<li class="subitem1"><a href="#">Dinner</a></li>										
-									<li class="subitem1"><a href="#">Trending Food</a></li>										
-								</ul>
-							</li>
-							<li class="item2"><a href="#">Italian Food<span class="glyphicon glyphicon-menu-down"></span></a>
-								<ul>
-									<li class="subitem1"><a href="#">Panzanella</a></li>										
-									<li class="subitem1"><a href="#">Margherita Pizza </a></li>										
-									<li class="subitem1"><a href="#">Panna Cotta</a></li>										
-									<li class="subitem1"><a href="#">Corn Cannelloni</a></li>										
-								</ul>
-							</li>
-							<li class="item3"><a href="#">American Food<span class="glyphicon glyphicon-menu-down"></span></a>
-								<ul>
-									<li class="subitem1"><a href="#">Sandwiches</a></li>										
-									<li class="subitem1"><a href="#">Hot dog</a></li>										
-									<li class="subitem1"><a href="#">Chicken bog</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Meat')">Meat</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Dairy')">Dairy</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Parveh')">Parveh</a></li>										
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('Vegan')">Vegan</a></li>
+									<li class="subitem1"><a style=cursor:pointer; onclick="filterSelection('all')">All</a></li>										
 								</ul>
 							</li>
 						</ul>
@@ -202,24 +187,20 @@
 						</script>
 						<!-- script for tabs -->
 					</div>
+					<br>
 					<div class="sidebar-row">
-						<h4>DISCOUNTS</h4>
+						<h4 style="text-align: center;">by Kosher</h4>
 						<div class="row row1 scroll-pane">  
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (2)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (5)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kosher</label>
+							
 						</div>
 					</div>
-					<div class="sidebar-row">
-						<h4>DELIVERY TIME</h4>
-						<div class="row row1 scroll-pane">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>6.30 am to 8.30 am</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>11.30 am to 1.30 pm</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>7.30 pm to 10.00 pm</label> 
-						</div>
-					</div>			 
+					<br>
+						<br>
+						<br>
+						<br>
+						
+								 
 				</div>
 			</div>
 			<div class="clearfix"> </div> 

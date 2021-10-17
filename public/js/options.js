@@ -8,13 +8,14 @@ $(document).ready(function () //edit the data that user added/
     }
     else {
         //console.log("rnter");
-        //document.getElementById("Search").val=null;
+        document.getElementById("Search").val=null;
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "Enter your area name in search box.";
     }
 });
 
 async function SearchRestResult(loctionSearch) {
+    console.log(loctionSearch);
     document.getElementById("products-row").innerHTML = "";
     document.getElementById("SearchResultDiv").style.display = 'none';
     var target = document.querySelector(".products-row");
@@ -24,7 +25,7 @@ async function SearchRestResult(loctionSearch) {
         await snap.forEach(function (item) {
             var itemVal = item.val();
             const city = itemVal.RestInfo.Location.address.split(",");
-            if (city[1].includes(loctionSearch)) {
+            if (city[1].includes(loctionSearch)&&loctionSearch!="") {
                 var response = IsInsideRadius(itemVal.RestInfo.Location.address);
                 response.then(function (result) {
                     if (w3ls.cart.items(0) == null || result == true) {
@@ -100,11 +101,11 @@ function filterSelection(c) {
     if (document.getElementById("SearchResult").innerHTML != "no result,try search again." && document.getElementById("SearchResult").innerHTML != "Enter your area name in search box.") {
         document.getElementById("SearchResultDiv").style.display = 'none';
         flagFilterResultDiv = 1;
-    }
+    }flagFilterResultDiv = 0;
     if (c == "all") c = "";
     for (i = 0; i < x.length; i++) {
         w3RemoveClass(x[i], "show");
-        flagFilterResultDiv = 0;
+        
         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
     }
     if (flagFilterResultDiv == 0) {

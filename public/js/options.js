@@ -88,7 +88,7 @@ async function CalculatDistanceBetween2Addresses(addressSource, addressTarget) {
         "adresses": [addressSource, addressTarget],
         "costing": govmap.costing.auto
     };
-    await govmap.getRoutingData(data).then(function (response) {
+    await govmap.getRoutingData(data).then(function (response) {//use algorithm
         lengthReturn = response.trip.summary.length;
     });
     return lengthReturn;

@@ -39,26 +39,28 @@ $(document).ready(function () {
     });   
 });
 function AddModelDish(NameDish) {
-    document.getElementById('ModelNameDish').innerHTML = NameDish;
-    var datesRef = firebase.database().ref();
-    datesRef.child('Restaurants').child(selectRestaurant).once('value', function (snap) { //once - only for one time connected
-        snap.forEach(function (item) {
-            var itemVal = item.val();
-            itemVal.Dishes.forEach(function (dish) {
-                if (dish.name == NameDish) {
-                    document.getElementById('model_img-responsive').src = dish.imageUrl;
-                    document.getElementById('ModelPrice').innerHTML = dish.dishPrice;
-                    document.getElementById('modelDescription').innerHTML = dish.dishDescription;
-                    document.getElementById('nameToCart').value = NameDish;
-                    document.getElementById('priceToCart').value = dish.dishPrice;
-                    document.getElementById('FullLocation').value = itemVal.Location.address;
-                    const city = itemVal.Location.address.split(",");
-                    document.getElementById('name+location').value = itemVal.Name + " - " + city[1];
-                    document.getElementById('inputSpinnerAmountCart').value = 1;
-                }
-            });
-        });
+  document.getElementById('ModelNameDish').innerHTML = NameDish;
+  var datesRef = firebase.database().ref();
+  datesRef.child('Restaurants').child(selectRestaurant).once('value', function (snap) { //once - only for one time connected
+    snap.forEach(function (item) {
+      var itemVal = item.val();
+      itemVal.Dishes.forEach(function (dish) {
+        if (dish.name == NameDish) {
+          if (dish.imageUrl != "") {
+            document.getElementById('model_img-responsive').src = dish.imageUrl;
+          }
+          document.getElementById('ModelPrice').innerHTML = dish.dishPrice;
+          document.getElementById('modelDescription').innerHTML = dish.dishDescription;
+          document.getElementById('nameToCart').value = NameDish;
+          document.getElementById('priceToCart').value = dish.dishPrice;
+          document.getElementById('FullLocation').value = itemVal.Location.address;
+          const city = itemVal.Location.address.split(",");
+          document.getElementById('name+location').value = itemVal.Name + " - " + city[1];
+          document.getElementById('inputSpinnerAmountCart').value = 1;
+        }
+      });
     });
+  });
 }
 var flagFilterResultDiv;
 function filterSelection(c) {

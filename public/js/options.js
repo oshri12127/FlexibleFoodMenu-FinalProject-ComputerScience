@@ -3,11 +3,10 @@ $(document).ready(function () //edit the data that user added/
     const urlParams = new URLSearchParams(window.location.search);
     const result = urlParams.get('Search');
     if (result != null) {
-        SearchRestResult(result);
         document.getElementById("Search").setAttribute('value', result);
+        SearchRestResult(result);
     }
     else {
-        //console.log("rnter");
         document.getElementById("Search").val=null;
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "Enter your area name in search box.";
@@ -15,7 +14,6 @@ $(document).ready(function () //edit the data that user added/
 });
 
 async function SearchRestResult(loctionSearch) {
-    console.log(loctionSearch);
     document.getElementById("products-row").innerHTML = "";
     document.getElementById("SearchResultDiv").style.display = 'none';
     var target = document.querySelector(".products-row");
@@ -33,6 +31,9 @@ async function SearchRestResult(loctionSearch) {
                         var imageRest = "/images/restaurant_default.jpg";
                         if (itemVal.RestInfo.picUrl != "")
                             imageRest = itemVal.RestInfo.picUrl;
+                        var Kosher="";
+                        if(itemVal.RestInfo.Kosher == 1)
+                            Kosher="kosher";    
                         if (i % 2 == 0) {
                             front = "<div class=\"front\"><img src=\"" + imageRest + "\" class=\"img-responsive\" alt=\"img\">" +
                                 "<div class=\"agile-product-text\"><h5>" + itemVal.RestInfo.Name + "</h5>" +
@@ -44,7 +45,7 @@ async function SearchRestResult(loctionSearch) {
                                 "</div><img src=\"" + imageRest + "\" class=\"img-responsive\" alt=\"img\"></div>";
                         }
 
-                        target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids " + itemVal.RestInfo.Type + " hide\">" +
+                        target.insertAdjacentHTML("beforeend", "<div class=\"col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids " + itemVal.RestInfo.Type + Kosher + " hide\">" +
 
                             "<div id=" + item.key + " class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"EnterSelsectRestaurant(this.id)\">" +
                             "<div class=\"flipper agile-products\">" +
@@ -95,22 +96,41 @@ async function CalculatDistanceBetween2Addresses(addressSource, addressTarget) {
 }
 
 var flagFilterResultDiv;
+var saveC;
 function filterSelection(c) {
-    var x, i;
+    var x, i, arrHtmlElement = [];
     x = document.getElementsByClassName("col-xs-6 col-sm-4 col-md-4 col-lg-4 product-grids");
+    if (c == "kosher") {
+        for (let index = 0; index < x.length; index++) {
+            if ($(x[index]).is(":visible")) {
+                arrHtmlElement.push(x[index]);
+            }
+        }
+        x = arrHtmlElement;
+    }
+    else if (c == "not_kosher") {
+        c = saveC;
+    }
+    else {
+        saveC = c;
+    }
     if (document.getElementById("SearchResult").innerHTML != "no result,try search again." && document.getElementById("SearchResult").innerHTML != "Enter your area name in search box.") {
         document.getElementById("SearchResultDiv").style.display = 'none';
         flagFilterResultDiv = 1;
-    }flagFilterResultDiv = 0;
+    } flagFilterResultDiv = 0;
     if (c == "all") c = "";
     for (i = 0; i < x.length; i++) {
         w3RemoveClass(x[i], "show");
-        
+
         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
     }
     if (flagFilterResultDiv == 0) {
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "There are no " + c + " restaurants in this area.";
+    }
+    console.log(saveC, "c: " + c);
+    if (c != "kosher" && document.getElementById('KosherCheck').checked) {
+        filterSelection("kosher");
     }
 }
 
@@ -135,3 +155,13 @@ function w3RemoveClass(element, name) {
     }
     element.className = arr1.join(" ");
 }
+
+$("#KosherCheck").change(function() {
+    if(this.checked) {
+        filterSelection("kosher");
+    }
+    else
+    {
+        filterSelection("not_kosher");
+    }
+});

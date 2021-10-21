@@ -46,12 +46,12 @@ $(document).ready(function () {
       $("#sunmitSearch").click(function () {
         alert("To Search Please Login.");
       });
-      if (!(document.URL.includes("login") || document.URL.includes("signup") || document.URL.includes(""))) {
+      if (!(document.URL.includes("login") || document.URL.includes("signup") || !document.URL.includes("/"))) {
         location.href = 'login';
       }
     }
   })
-  if(document.URL.includes(""))
+  if(!document.URL.includes("/"))
   {
     carousel();
   }

@@ -46,12 +46,12 @@ $(document).ready(function () {
       $("#sunmitSearch").click(function () {
         alert("To Search Please Login.");
       });
-      if (!(document.URL.includes("login.html") || document.URL.includes("signup.html") || document.URL.includes("index.html"))) {
-        location.href = 'login.html';
+      if (!(document.URL.includes("login") || document.URL.includes("signup") || document.URL.includes("index"))) {
+        location.href = 'login';
       }
     }
   })
-  if(document.URL.includes("index.html"))
+  if(document.URL.includes("index"))
   {
     carousel();
   }
@@ -67,14 +67,14 @@ function isBusinessAccount(user) {
       emailUserHello.innerHTML = 'Hello ' + itemVal.Name;
       if (itemVal.Account == 1) {//  business=1
         document.getElementById('business').style.visibility = 'visible';
-        if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html"))) {
-          location.href = 'businessPage.html';
+        if ((document.URL.includes("login")) || (document.URL.includes("signup"))) {
+          location.href = 'businessPage';
         }
       }
       else {
         document.getElementById('business').style.visibility = 'hidden';
-        if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html")) || (document.URL.includes("businessPage.html"))) {
-          location.href = 'index.html';
+        if ((document.URL.includes("login")) || (document.URL.includes("signup")) || (document.URL.includes("businessPage"))) {
+          location.href = 'index';
         }
       }
     });

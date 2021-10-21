@@ -69,7 +69,7 @@ function sleep(ms) {
 }
 function EnterSelsectRestaurant(click_id) {
     localStorage.setItem('selectRestaurant', click_id);
-    window.location.href = 'restaurantPage.html';
+    window.location.href = 'restaurantPage';
 }
 const RADIUS = 2.0;
 async function IsInsideRadius(addressTarget) {

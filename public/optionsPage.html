@@ -142,12 +142,23 @@
 				<div class="rsidebar-top">
 					<div class="slider-left" style="text-align: center;">
 						<h4>Area</h4>
-						<form >
-						<input id="Search" name="Search" type="text" placeholder="Area Name(In Hebrew)" required="">
-						<br>
-						<br>
-						<input id="sunmitSearch"  type="submit" value="Search">
-					</form></div>
+						<form id="formSearch">
+							<input id="Search" name="Search" type="text" placeholder="Area Name(In Hebrew)" required="">
+							<br>
+							<br>
+							<input id="sunmitSearch" type="submit" value="Search">
+							<br>
+							<br>
+						</form>
+						<div class="form-group">
+							<label for="RecommendedAreas" style="font-size: medium;">Recommended Areas:</label>
+							<br>
+							<select class="form-control" id="RecommendedAreas"
+								style="margin: 0 auto; padding: 1px 2px; width: 157px; height: auto;">
+								<option>תל אביב</option>
+							</select>
+						</div>
+					</div>
 					<br>
 					<div class="sidebar-row">
 						<h4 style="text-align: center;">By Cuisine</h4>

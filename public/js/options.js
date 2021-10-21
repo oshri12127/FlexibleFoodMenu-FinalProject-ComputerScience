@@ -2,12 +2,14 @@ $(document).ready(function () //edit the data that user added/
 {
     const urlParams = new URLSearchParams(window.location.search);
     const result = urlParams.get('Search');
+    document.getElementById("RecommendedAreas").value=null;
     if (result != null) {
         document.getElementById("Search").setAttribute('value', result);
+        //document.getElementById("Search").value=result;
         SearchRestResult(result);
     }
     else {
-        document.getElementById("Search").val=null;
+        document.getElementById("Search").value=null;
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "Enter your area name in search box.";
     }
@@ -163,4 +165,10 @@ $("#KosherCheck").change(function() {
     {
         filterSelection("not_kosher");
     }
+});
+$('#RecommendedAreas').on('change', function () 
+{
+    document.getElementById("Search").value=document.getElementById("RecommendedAreas").value;
+    document.getElementById('formSearch').submit();
+    
 });

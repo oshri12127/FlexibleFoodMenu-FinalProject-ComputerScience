@@ -1071,6 +1071,7 @@ h3.w3ls-title.w3ls-title1 {
 .agile-product-text {
     background: #08cae2;
     padding: 1.5em 2em;
+    height: 30%;
     text-align: center;
 }
 .agile-product-text.agile-product-text2 {
@@ -1113,7 +1114,7 @@ h3.w3ls-title.w3ls-title1 {
 	transform: rotateY(180deg);
 }
 
-.flip-container, .back {
+.flip-container, .back, .front{
     width: 100%;
     height: 235px;
 }

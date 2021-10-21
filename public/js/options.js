@@ -30,7 +30,7 @@ async function SearchRestResult(loctionSearch) {
                 response.then(function (result) {
                     if (w3ls.cart.items(0) == null || result == true) {
                         i++;
-                        var imageRest = "/images/default_dish.jpg";
+                        var imageRest = "/images/restaurant_default.jpg";
                         if (itemVal.RestInfo.picUrl != "")
                             imageRest = itemVal.RestInfo.picUrl;
                         if (i % 2 == 0) {

@@ -46,12 +46,12 @@ $(document).ready(function () {
       $("#sunmitSearch").click(function () {
         alert("To Search Please Login.");
       });
-      if (!(document.URL.includes("login") || document.URL.includes("signup") || !document.URL.includes("/"))) {
+      if (!(document.URL.includes("login") || document.URL.includes("signup") || document.URL.includes("index"))) {
         location.href = 'login';
       }
     }
   })
-  if(!document.URL.includes("/"))
+  if(document.URL.includes("index"))
   {
     carousel();
   }
@@ -74,7 +74,7 @@ function isBusinessAccount(user) {
       else {
         document.getElementById('business').style.visibility = 'hidden';
         if ((document.URL.includes("login")) || (document.URL.includes("signup")) || (document.URL.includes("businessPage"))) {
-          location.href = '';
+          location.href = 'index';
         }
       }
     });

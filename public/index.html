@@ -202,21 +202,6 @@
 								<span id="span-4"></span>
 							</div>
 						</a>
-						
-						<a href="optionsPage?Search=תל+אביב" class="item g1">
-							<img class="lazyOwl" id="img-5" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4 id="h4-5"></h4>
-								<span id="span-5"></span>
-							</div>
-						</a>
-						<a href="optionsPage?Search=תל+אביב" class="item g1">
-							<img class="lazyOwl" id="img-6" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4 id="h4-6"></h4>
-								<span id="span-6"></span>
-							</div>
-						</a>
 					</div> 
 				</div>  
 				<div class="clearfix"> </div>
@@ -256,6 +241,11 @@
 	</div>
 	<!-- //footer --> 
 	<!-- cart-js -->
+	<script>$(document).ready(function () {
+			if (document.URL.includes("index")==false) {
+				location.href = 'index.html';
+			}
+		})</script>
 	<script src="js/minicart.js"></script>
 	<script>
         w3ls.render();

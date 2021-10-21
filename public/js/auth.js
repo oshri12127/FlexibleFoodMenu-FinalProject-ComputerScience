@@ -87,13 +87,16 @@ function carousel() {
   datesRef.child('Restaurants').once('value', function (snap) { //once - only for one time connected
     snap.forEach(function (item) {
       var itemVal = item.val();
+      var imageRest = "/images/restaurant_default.jpg";
       const city = itemVal.RestInfo.Location.address.split(",");
       if (city[1].includes("תל אביב")) {
-        document.getElementById('img-' + index).src = itemVal.RestInfo.picUrl;
+        if(itemVal.RestInfo.picUrl!="")
+          imageRest=itemVal.RestInfo.picUrl;
+        document.getElementById('img-' + index).src =imageRest;
         document.getElementById('h4-' + index).innerHTML = itemVal.RestInfo.Name;
         document.getElementById('span-' + index).innerText = itemVal.RestInfo.Description;
         index++;
-        if(index == 7)
+        if(index == 5)
           return;
       }
     });

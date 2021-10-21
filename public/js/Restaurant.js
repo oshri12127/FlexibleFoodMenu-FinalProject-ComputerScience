@@ -5,8 +5,8 @@ $(document).ready(function () {
     datesRef.child('Restaurants').child(selectRestaurant).once('value', async function (snap) { //once - only for one time connected
         await snap.forEach(function (item) {
             var itemVal = item.val();
-            document.getElementById('PicRestPreview').style.backgroundImage = 'url(' + itemVal.picUrl + ')';
-            document.getElementById('NameRestPreview').innerHTML = itemVal.Name;
+            document.getElementById('PicRest').style.backgroundImage = 'url(' + itemVal.picUrl + ')';
+            document.getElementById('NameRest').innerHTML = itemVal.Name;
             var target = document.querySelector(".products-row");
             var front; var i = 0;
             document.getElementById("products-row").innerHTML = "";
@@ -49,7 +49,7 @@ function AddModelDish(NameDish) {
           if (dish.imageUrl != "") {
             document.getElementById('model_img-responsive').src = dish.imageUrl;
           }
-          document.getElementById('ModelPrice').innerHTML = dish.dishPrice;
+          document.getElementById('ModelPrice').innerHTML ="₪ "+ dish.dishPrice;
           document.getElementById('modelDescription').innerHTML = dish.dishDescription;
           document.getElementById('nameToCart').value = NameDish;
           document.getElementById('priceToCart').value = dish.dishPrice;
@@ -67,10 +67,10 @@ function filterSelection(c) {
   var x, i;
   document.getElementById("FilterResultDiv").style.display = 'none';
   x = document.getElementsByClassName("col-xs-6 col-sm-3 col-md-3 col-lg-3  product-grids");
+  flagFilterResultDiv=0;
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
-    flagFilterResultDiv=0;
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
   if(flagFilterResultDiv==0)

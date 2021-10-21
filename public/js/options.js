@@ -50,7 +50,7 @@ async function SearchRestResult(loctionSearch) {
                             "<div id=" + item.key + " class=\"flip-container\" style=\"cursor: pointer;\" onclick=\"EnterSelsectRestaurant(this.id)\">" +
                             "<div class=\"flipper agile-products\">" +
                             front +
-                            "<div class=\"back\"><h4>" + itemVal.RestInfo.Name + "</h4><p>" + itemVal.RestInfo.Description + "</p><h4>" + itemVal.RestInfo.Type + "</h4>" +
+                            "<div class=\"back\"><h4><strong>" + itemVal.RestInfo.Name + "</strong></h4><p>" + itemVal.RestInfo.Description + "</p><h9 style=\"font-size: 15px;color: whitesmoke;\">" + itemVal.RestInfo.Type + "</h9><p></p><span style=\"font-size: 15px;color: whitesmoke;\">" + itemVal.RestInfo.Location.address + "</span>" +
                             "</div></div></div></div>");
                     }
                 });
@@ -128,7 +128,6 @@ function filterSelection(c) {
         document.getElementById("SearchResultDiv").style.display = 'block';
         document.getElementById("SearchResult").innerHTML = "There are no " + c + " restaurants in this area.";
     }
-    console.log(saveC, "c: " + c);
     if (c != "kosher" && document.getElementById('KosherCheck').checked) {
         filterSelection("kosher");
     }

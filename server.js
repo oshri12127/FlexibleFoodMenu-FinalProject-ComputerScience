@@ -25,7 +25,7 @@ app.get('/optionsPage', (req, res) => {
 app.get('/restaurantPage', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'restaurantPage.html'));
 });
-app.get('/index', (req, res) => {
+app.get('', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 

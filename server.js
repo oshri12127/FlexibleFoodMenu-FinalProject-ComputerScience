@@ -16,7 +16,16 @@ app.get('/login', (req, res) => {
 app.get('/businessPage', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'businessPage.html'));
 });
-app.get('', (req, res) => {
+app.get('/checkoutPage', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'checkoutPage.html'));
+});
+app.get('/optionsPage', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'optionsPage.html'));
+});
+app.get('/restaurantPage', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'restaurantPage.html'));
+});
+app.get('/index', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 

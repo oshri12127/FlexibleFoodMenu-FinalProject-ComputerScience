@@ -46,12 +46,12 @@ $(document).ready(function () {
       $("#sunmitSearch").click(function () {
         alert("To Search Please Login.");
       });
-      if (!(document.URL.includes("login.html") || document.URL.includes("signup.html") || document.URL.includes("index.html"))) {
-        location.href = 'login.html';
+      if (!(document.URL.includes("login") || document.URL.includes("signup") || document.URL.includes("index"))) {
+        location.href = 'login';
       }
     }
   })
-  if(document.URL.includes("index.html"))
+  if(document.URL.includes("index"))
   {
     carousel();
   }
@@ -67,14 +67,14 @@ function isBusinessAccount(user) {
       emailUserHello.innerHTML = 'Hello ' + itemVal.Name;
       if (itemVal.Account == 1) {//  business=1
         document.getElementById('business').style.visibility = 'visible';
-        if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html"))) {
-          location.href = 'businessPage.html';
+        if ((document.URL.includes("login")) || (document.URL.includes("signup"))) {
+          location.href = 'businessPage';
         }
       }
       else {
         document.getElementById('business').style.visibility = 'hidden';
-        if ((document.URL.includes("login.html")) || (document.URL.includes("signup.html")) || (document.URL.includes("businessPage.html"))) {
-          location.href = 'index.html';
+        if ((document.URL.includes("login")) || (document.URL.includes("signup")) || (document.URL.includes("businessPage"))) {
+          location.href = 'index';
         }
       }
     });
@@ -87,13 +87,16 @@ function carousel() {
   datesRef.child('Restaurants').once('value', function (snap) { //once - only for one time connected
     snap.forEach(function (item) {
       var itemVal = item.val();
+      var imageRest = "/images/restaurant_default.jpg";
       const city = itemVal.RestInfo.Location.address.split(",");
       if (city[1].includes("תל אביב")) {
-        document.getElementById('img-' + index).src = itemVal.RestInfo.picUrl;
+        if(itemVal.RestInfo.picUrl!="")
+          imageRest=itemVal.RestInfo.picUrl;
+        document.getElementById('img-' + index).src =imageRest;
         document.getElementById('h4-' + index).innerHTML = itemVal.RestInfo.Name;
         document.getElementById('span-' + index).innerText = itemVal.RestInfo.Description;
         index++;
-        if(index == 7)
+        if(index == 5)
           return;
       }
     });

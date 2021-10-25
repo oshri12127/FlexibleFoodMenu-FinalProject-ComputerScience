@@ -18,6 +18,7 @@ $(document).ready(function () //edit the data that user added/
 async function SearchRestResult(loctionSearch) {
     document.getElementById("products-row").innerHTML = "";
     document.getElementById("SearchResultDiv").style.display = 'none';
+    document.getElementById("SearchRadiusDiv").style.display = 'none';
     var target = document.querySelector(".products-row");
     var front; var i = 0;
     var datesRef = firebase.database().ref();
@@ -78,6 +79,8 @@ async function IsInsideRadius(addressTarget) {
     var length;
     if (w3ls.cart.items(0) != null) {
         var addressSource = w3ls.cart.items(0)._data.location;
+        document.getElementById("SearchRadiusDiv").style.display = 'block';
+        document.getElementById("SearchRadius").innerHTML = "Your cart is not empty so you are searching in a radius of " + addressSource + " .";
         length = await CalculatDistanceBetween2Addresses(addressSource, addressTarget);
         if (length <= RADIUS)
             return true;
